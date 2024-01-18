@@ -9,6 +9,7 @@ RUN useradd -md /home/spid3r user
 
 WORKDIR /home/spid3r
 
+COPY ./server.py .
 COPY result.txt /home/spid3r/result.txt
 COPY test.c .
 
