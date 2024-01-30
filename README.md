@@ -100,42 +100,42 @@ $$
 
 $$
 \begin{align*}
-\Delta_{P_C} = \left\lceil \frac{P_C}{\min\left\{ m, p \right\}} \right\rceil
+\Delta_{P_C} = \left\lceil \frac{P_C}{\min\{ m, p \}} \right\rceil
 \end{align*}
 $$
 
 ###  2. Verification key
 Let $n_0=\frac{N}{n},m_0=\frac{M}{m},p_0=\frac{P}{p}$.
 
-In case: $m_0<p_0$ The master node will generate the key $k_i$ corresponding to $F^{*}(z_i)$, where the vectors $k^{T}_{i} \in \mathbb{F}^{m^{*}}$, as follows:
+In case: $m_0 < p_0$ The master node will generate the key $k_i$ corresponding to $F^{* }(z_i)$, where the vectors $k^{T}_{i} \in \mathbb{F}^{m^{* }}$, as follows:
 
 $$
 \begin{align*}
-R_i = k_i F^{*}(z_i)
+R_i = k_i F^{* }(z_i)
 \end{align*}
 $$
 
-In case: $m_0 \geq p_0$, master node will generate vector $k_i \in \mathbb{F}^{p^{*}}$ corresponding to G∗(zi)as follow:
+In case: $m_0 \geq p_0$, master node will generate vector $k_i \in \mathbb{F}^{p^{* }}$ corresponding to G∗(zi)as follow:
 
 $$
 \begin{align*}
-R_i= G^{*}(z_i)k_i
+R_i= G^{* }(z_i)k_i
 \end{align*}
 $$
 
 #### 3. Task computing 
-After generating thekey, themaster code will send $F^{*}(z_i)$ and $G^{*}(z_i)$ to each i-thworker.The workers perform computations:
+After generating thekey, themaster code will send $F^{* }(z_i)$ and $G^{* }(z_i)$ to each i-thworker.The workers perform computations:
 
 $$
 \begin{align*}
-F_z(z_i) = F^{*}(z_i)G^{*}(z_i)
+F_z(z_i) = F^{* }(z_i)G^{* }(z_i)
 \end{align*}
 $$
 
 ## Contact
+### Paper
+If you have any question about this research, please check our research paper for more information: [A_Secure_PolyDot_Matrix_Multiplication_Approach_For_Distributed_Computing.pdf](/Paper-Research/A_Secure_PolyDot_Matrix_Multiplication_Approach_For_Distributed_Computing.pdf)
 ### Authors
 Thai Son Dinh: sondinh99999@gmail.com
 
 Dang Anh Duc Pham: anhduc03nb@gmail.com
-### Paper
-If you have any question about this research, please check our research paper for more information: [A_Secure_PolyDot_Matrix_Multiplication_Approach_For_Distributed_Computing.pdf](/Paper-Research/A_Secure_PolyDot_Matrix_Multiplication_Approach_For_Distributed_Computing.pdf)
