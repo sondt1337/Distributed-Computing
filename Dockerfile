@@ -1,21 +1,19 @@
-FROM ubuntu:22.04
+FROM python:3.8.16-alpine
 
 RUN apt-get update \
-    && apt-get install -y supervisor socat gcc \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+    && apk add socat \
+    && apt-get clean \*
 
-RUN useradd -md /home/spid3r user
+# RUN useradd -md /home/spid3r user
+RUN addgroup -S Spid3r && adduser -S Spid3r -G Spid3r
 
 WORKDIR /home/spid3r
 
 COPY ./server.py .
 COPY result.txt /home/spid3r/result.txt
-COPY worker.c .
+COPY ./worker.py .
 
-RUN gcc -o worker worker.c
-RUN chmod +x ./worker \
-    && chmod 444 ./result.txt
+RUN chmod 444 ./result.txt
 
 EXPOSE 1337
 

@@ -3,6 +3,7 @@ Please check our paper research for more information: [A_Secure_PolyDot_Matrix_M
 ## Input 
 
 Master node partition the matrix 
+
 $$
 \mathbf{X} = \begin{pmatrix}
 X_{1,1} & \cdots & X_{1,n} \\
