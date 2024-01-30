@@ -3,7 +3,7 @@ import multiprocessing
 
 def worker(i, j):
     # print(f"Running ./test for combination ({i+1}, {j+1})")
-    subprocess.run(["./test", str(i+1), str(j+1)])
+    subprocess.run(["./worker", str(i+1), str(j+1)])
 
 if __name__ == "__main__":
     print("---------------------------------------------")

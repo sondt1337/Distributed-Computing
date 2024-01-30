@@ -11,10 +11,10 @@ WORKDIR /home/spid3r
 
 COPY ./server.py .
 COPY result.txt /home/spid3r/result.txt
-COPY test.c .
+COPY worker.c .
 
-RUN gcc -o test test.c
-RUN chmod +x ./test \
+RUN gcc -o worker worker.c
+RUN chmod +x ./worker \
     && chmod 444 ./result.txt
 
 EXPOSE 1337
