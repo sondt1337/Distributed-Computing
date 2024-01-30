@@ -1,17 +1,28 @@
 import subprocess
+import multiprocessing
 
-print("---------------------------------------------")
-print("Welcome to the distributed-computing Program!")
-print("---------------------------------------------")
+def worker(i, j):
+    # print(f"Running ./test for combination ({i+1}, {j+1})")
+    subprocess.run(["./test", str(i+1), str(j+1)])
 
-n = int(input("\n> col: "))
-m = int(input("> row: "))
+if __name__ == "__main__":
+    print("---------------------------------------------")
+    print("Welcome to the distributed-computing Program!")
+    print("---------------------------------------------")
 
-for i in range(n):
-    for j in range(m):
-        print(f"Running ./test for combination ({i+1}, {j+1})")
-        
-        # call ./test --> running many process as workers 
-        subprocess.run(["./test", str(i+1), str(j+1)])
+    n = int(input("\n> col: "))
+    m = int(input("> row: "))
 
-print("Program execution completed.")
+    processes = [] # list of process
+
+    for i in range(n):
+        for j in range(m):
+            p = multiprocessing.Process(target=worker, args=(i, j))
+            processes.append(p)
+            p.start()
+
+    for p in processes:
+        p.join()
+
+    print("Program execution completed.")
+
