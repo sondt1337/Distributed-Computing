@@ -34,9 +34,7 @@ Z_{m,1} & \cdots & Z_{m,p}
 $$
 
 with
-$$
-Z_{u, v} = \sum_{k=1}^{n} X_{u,k} Y_{v, k}, u \in {1, 2, ..., m},  v \in {1, 2, 3, ..., p}
-$$ 
+$$Z_{u, v} = \sum_{k=1}^{n} X_{u,k} Y_{v, k}, u \in {1, 2, ..., m},  v \in {1, 2, 3, ..., p}$$ 
 
 
 ### 1. Encode 
@@ -54,8 +52,7 @@ where F and G are encode function satisfied F: $\mathbb{F}^{\frac{M}{m} \times \
 
 ### 2. Task computing
 $i$-th worker calculate $F(z_{i})G(z_{i})$. As soon as worker $i$ completes  the computation, it will send
-the result back to themaster node, noting that the returned
-results from the workers may vary in speed depending on each worker’s computational capabilities, and the returned results may not be accurate.
+the result back to themaster node, noting that the returned results from the workers may vary in speed depending on each worker’s computational capabilities, and the returned results may not be accurate.
 
 $$
 \begin{align*}
@@ -78,6 +75,7 @@ P_R = mnp + n - 1
 $$
 
 and communication load is:
+
 $$
 \begin{align*} 
 C_L = P_D \frac{MP}{mp}
