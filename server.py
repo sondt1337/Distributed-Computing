@@ -3,10 +3,10 @@ import multiprocessing
 import numpy as np
 import math
 import random
+import json
 
-def worker(i):
-    # subprocess.run(["./worker", str(i+1)])
-    subprocess.run(["python", "worker.py"])
+def worker(i, F_json, G_json):
+    subprocess.run(["python", "worker.py", str(i) , F_json, G_json])
 
 def print_matrix(matrix):
     for row in matrix:
@@ -90,7 +90,8 @@ if __name__ == "__main__":
     print("---------------------------------------------")
 
     processes = [] 
-    w = int(input("input number of w> ")) 
+    
+    # M = 2, N = 4, P = 6, m = 2, n = 1, p = 3, Pc = 2 
     M, N, P, m, n, p, Pc = map(int, input("Enter M, N, P, m, n, p, Pc: ").split())
     delta_pc = math.ceil(Pc / n)
     matrix1 = create_matrix(M, N)
@@ -104,24 +105,22 @@ if __name__ == "__main__":
 
     sub_matrices1 = print_sub_matrices_1(matrix1, M//m, N//n)
     additional_matrices1 = create_additional_matrices_1(M//m, N//n, n, delta_pc)
-
     sub_matrices2 = print_sub_matrices_2(matrix2, N//n, P//p)
     additional_matrices2 = create_additional_matrices_2(N//n, P//p, n, delta_pc)
-
-    print(sub_matrices2)
-    print(additional_matrices2)
-
-    print(calc_G(sub_matrices2, additional_matrices2, 1, m, n, p, delta_pc))
-
+    
     key = key_gen(m, M)
     print("Generated Key:", key)
 
-    for i in range(w):
-        p = multiprocessing.Process(target=worker, args=(i,))
-        processes.append(p)
-        p.start()
+    for i in range(30): # 30 workers 
+        F = calc_F(sub_matrices1, additional_matrices1, i, m, n, delta_pc)
+        G = calc_G(sub_matrices2, additional_matrices2, i, m, n, p, delta_pc)
+        F_json = json.dumps(F.tolist())  # Convert the NumPy array to a JSON string
+        G_json = json.dumps(G.tolist())
+        r = multiprocessing.Process(target=worker, args=(i, F_json, G_json))
+        processes.append(r)
+        r.start()
 
-    for p in processes:
-        p.join()
+    for r in processes:
+        r.join()
 
     print("Program execution completed.")
