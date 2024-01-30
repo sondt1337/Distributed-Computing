@@ -1,6 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <math.h>
+
+// Khai báo hàm trần delta = trunc(Pc/n)
+int trunDelta(int Pc, int n) {
+    return trunc((double)Pc / n);
+}
 
 void printMatrix(int** matrix, int rows, int cols) {
     for (int i = 0; i < rows; i++) {
@@ -38,11 +44,12 @@ void printSubMatrices(int** matrix, int rows, int cols, int subRows, int subCols
 
 int main() {
     srand(time(0));  // Seed for random number generator
-
+    int Pc = 2;
     int M, N, P, m, n, p;
     printf("Enter M, N, P: ");
     scanf("%d %d %d %d %d %d", &M, &N, &P, &m, &n, &p);
-
+    int deltaPc = trunDelta(Pc, n);
+    printf("%d", deltaPc);
     int** matrix1 = createMatrix(M, N);
     int** matrix2 = createMatrix(N, P);
 
