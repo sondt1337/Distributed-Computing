@@ -10,19 +10,23 @@ if __name__ == "__main__":
     print("Welcome to the distributed-computing Program!")
     print("---------------------------------------------")
 
-    n = int(input("\n> col: "))
-    m = int(input("> row: "))
+    while True: 
+        n = int(input("\n> col: "))
+        m = int(input("> row: "))
 
-    processes = [] # list of process
+        processes = [] # list of process
 
-    for i in range(n):
-        for j in range(m):
-            p = multiprocessing.Process(target=worker, args=(i, j))
-            processes.append(p)
-            p.start()
+        for i in range(n):
+            for j in range(m):
+                p = multiprocessing.Process(target=worker, args=(i, j))
+                processes.append(p)
+                p.start()
 
-    for p in processes:
-        p.join()
+        for p in processes:
+            p.join()
 
-    print("Program execution completed.")
+        print("Program execution completed.")
 
+        choice = input("Do you want to run the program again? (y/n): ")
+        if choice.lower() != 'y':
+            break  # end process
