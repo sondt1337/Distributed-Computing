@@ -5,7 +5,8 @@ import math
 import random
 
 def worker(i):
-    subprocess.run(["./worker", str(i+1)])
+    # subprocess.run(["./worker", str(i+1)])
+    subprocess.run(["python", "worker.py"])
 
 def print_matrix(matrix):
     for row in matrix:
