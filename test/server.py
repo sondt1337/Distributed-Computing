@@ -49,6 +49,21 @@ def createAdditionalMatrices2(submatrix_rows, submatrix_cols, n, deltaPc):
             submatrices[submatrix_name] = submatrix  # save to list submatrices
     return submatrices
 
+def calcF(submatrices, additional_matrices, z, m, n, deltaPc):
+    F1 = 0
+    F2 = 0
+    for i in range(1, m+1):
+        for j in range(1, n+1):
+            F1 += submatrices[f"A_{i}_{j}"] * pow(z, n*(i-1) + (j -1))
+       
+    for i in range(1, deltaPc+1):
+        for j in range(1, n+1):
+            F2 += additional_matrices[f"R_{i}_{j}"] * pow(z, n*(i-1) + (j -1))
+    
+    F = F1 + F2     
+    return F
+
+
 # M, N, P, m, n, p = map(int, input("Enter M, N, P, m, n, p: ").split())
 M = 4
 N = 6
@@ -73,7 +88,16 @@ additional_matrices1 = createAdditionalMatrices1(M//m, N//n, n, deltaPc)
 submatrices2 = printSubMatrices2(matrix2, N//n, P//p)
 additional_matrices2 = createAdditionalMatrices2(N//n, P//p, n, deltaPc)
 
-print(additional_matrices1)
 print(submatrices1)
-print(additional_matrices2)
-print(submatrices2)
+print(additional_matrices1)
+# print(submatrices2)
+# print(additional_matrices2)
+
+
+# print(submatrices1["A_1_1"])
+# print(submatrices2["B_1_1"])
+# print(np.dot(submatrices1["A_1_1"], submatrices2["B_1_1"]))
+
+
+
+print(calcF(submatrices1, additional_matrices1, 1, m, n, deltaPc))
