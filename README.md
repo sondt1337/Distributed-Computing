@@ -124,7 +124,6 @@ $$
 #### 3. Task computing 
 After generating thekey, themaster code will send $F^{*}(z_i)$ and $G^{*}(z_i)$ to each i-thworker.The workers perform computations:
 
-
 $$
 \begin{align*}
 F_z(z_i) = F^{*}(z_i)G^{*}(z_i)
