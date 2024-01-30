@@ -2,4 +2,4 @@
 
 ## Struture 
 
-![](image.png)
+![](/DistributedComputing/image.png)
