@@ -1,5 +1,7 @@
-# Distributed Computing
-Please check our paper research for more information: [A_Secure_PolyDot_Matrix_Multiplication_Approach_For_Distributed_Computing.pdf](/Paper-Research/A_Secure_PolyDot_Matrix_Multiplication_Approach_For_Distributed_Computing.pdf)
+# Distributed Computing with Matrix Multiplication
+## Structure
+![](/Distributed-Computing/image.png)
+
 ## PolyDot Code without security
 
 Master node partition the matrix 
@@ -130,11 +132,10 @@ F_z(z_i) = F^{*}(z_i)G^{*}(z_i)
 \end{align*}
 $$
 
-## Structure
-![](/Distributed-Computing/image.png)
-
-## Author 
-If you have any question about this research, please contact us:
-
+## Contact
+### Authors
 Thai Son Dinh: sondinh99999@gmail.com
+
 Dang Anh Duc Pham: anhduc03nb@gmail.com
+### Paper
+If you have any question about this research, please check our research paper for more information: [A_Secure_PolyDot_Matrix_Multiplication_Approach_For_Distributed_Computing.pdf](/Paper-Research/A_Secure_PolyDot_Matrix_Multiplication_Approach_For_Distributed_Computing.pdf)
