@@ -1,0 +1,929 @@
+% Encoding: UTF-8
+
+
+
+
+
+@article{shi2017global,
+  title={Global optimization for optimal power flow over transmission networks},
+  author={Shi, Ye and Tuan, Hoang Duong and Tuy, H and Su, S},
+  journal={J. Global Optimiz.,},
+  volume={69},
+  number={3},
+  month=Nov,
+  year={2017},
+  pages={745--760},
+}
+
+@Article{sheng2018power,
+  author  = {Sheng, Zhichao and Tuan, Hoang Duong and Nasir, Ali Arshad and Duong, Trung Q and Poor, H Vincent},
+  journal = {IEEE Trans. Wireless Commun.},
+  title   = {Power allocation for energy efficiency and secrecy of wireless interference networks},
+  year    = {2018},
+  month   = Mar,
+  number  = {6},
+  pages   = {3737--3751},
+  volume  = {17},
+}
+
+@article{pan2020intelligent,
+  title={Intelligent reflecting surface aided MIMO broadcasting for simultaneous wireless information and power transfer},
+  author={Pan, Cunhua and Ren, Hong and Wang, Kezhi and Elkashlan, Maged and Nallanathan, Arumugam and Wang, Jiangzhou and Hanzo, Lajos},
+  journal={IEEE J. Sel. Areas Commun.},
+  month=Feb,
+  year={2020}
+}
+
+@article{wu2019weighted,
+  title={Weighted sum power maximization for intelligent reflecting surface aided {SWIPT}},
+  author={Wu, Qingqing and Zhang, Rui},
+  journal={IEEE Wirel. Commun. Lett.},
+  volume={9},
+  number={5},
+  month=Dec,
+  year={2019},
+  pages={586--590},
+}
+
+@inproceedings{bjornson2013massive,
+  title={Massive {MIMO} and small cells: {I}mproving energy efficiency by optimal soft-cell coordination},
+  author={Bjornson, Emil and Kountouris, Marios and Debbah, M{\'e}rouane},
+  booktitle={Proc. IEEE ICT},
+  month = May,
+  year={2013},
+   pages={1--5}
+}
+
+@Article{tam2016successive,
+  author  = {Tam, Ho Huu Minh and Tuan, Hoang Duong and Ngo, Duy Trong},
+  journal = {IEEE Trans. Commun.},
+  title   = {Successive convex quadratic programming for quality-of-service management in full-duplex {MU-MIMO} multicell networks},
+  year    = {2016},
+  month   = Apr,
+  number  = {6},
+  pages   = {2340--2353},
+  volume  = {64},
+}
+
+
+@article{marks1978general,
+  title={A general inner approximation algorithm for nonconvex mathematical programs},
+  author={Marks, Barry R and Wright, Gordon P},
+  journal={Operations {R}esearch},
+  volume={26},
+  number={4},
+  month=Aug,
+  year={1978},
+  pages={681--683},
+}
+
+@article{wiesel2005linear,
+  title={Linear precoding via conic optimization for fixed {MIMO} receivers},
+  author={Wiesel, Ami and Eldar, Yonina C and Shamai, Shlomo},
+  journal={IEEE Trans. Signal Process.},
+  volume={54},
+  number={1},
+  month=Dec,
+  year={2005},
+  pages={161--176},
+}
+
+@Article{nasir2016beamforming,
+  author  = {Nasir, Ali Arshad and Tuan, Hoang Duong and Ngo, Duy Trong and Duong, Trung Q and Poor, H Vincent},
+  journal = {IEEE Trans. Commun.},
+  title   = {Beamforming design for wireless information and power transfer systems: {R}eceive power-splitting versus transmit time-switching},
+  year    = {2016},
+  month   = Nov,
+  number  = {2},
+  pages   = {876--889},
+  volume  = {65},
+}
+
+@Article{nasir2017secure,
+  author  = {Nasir, Ali Arshad and Tuan, Hoang Duong and Duong, Trung Q and Poor, H Vincent},
+  journal = {IEEE Trans. Wireless Commun.},
+  title   = {Secure and energy-efficient beamforming for simultaneous information and energy transfer},
+  year    = {2017},
+  month   = Sep,
+  number  = {11},
+  pages   = {7523--7537},
+  volume  = {16},
+}
+
+@article{peaucelle2002user,
+  author={Peaucelle, Dimitri and Henrion, Didier and Labit, Yann and Taitz, Krysten},
+  title={User’s guide for {SeDuMi} interface 1.04},
+  url={http://homepages.laas.fr/peaucell/software/sdmguide.pdf},
+  year={2002},
+}
+
+@Book{Tuybook,
+  Title                    = {Convex Analysis and Global Optimization (second edition)},
+  Author                   = {H. Tuy},
+  Publisher                = {Springer International},
+  Year                     = {2016}
+}
+
+@Article{liu2018mu,
+  author  = {Liu, Fan and Masouros, Christos and Li, Ang and Sun, Huafei and Hanzo, Lajos},
+  journal = {IEEE Trans. Wireless Commun.},
+  title   = {{MU-MIMO} communications with {MIMO} radar: From co-existence to joint transmission},
+  year    = {2018},
+  month   = Apr,
+  number  = {4},
+  pages   = {2755--2770},
+  volume  = {17},
+}
+
+@inproceedings{sharma2012four,
+  title={Four-phase orthogonal code design for {MIMO} radar systems},
+  author={Sharma, GVK and Rajeswari, K Raja},
+  booktitle={Proc. Nat. Conf. Commun.},
+  month=Feb,
+  year={2012},
+  pages={1--4},
+}
+
+
+@article{sarwate1980crosscorrelation,
+  title={Crosscorrelation properties of pseudorandom and related sequences},
+  author={Sarwate, Dilip V and Pursley, Michael B},
+  journal={Proc. IEEE},
+  volume={68},
+  number={5},
+  month=May,
+  year={1980},
+  pages={593--619},
+}
+
+@article{guangmin2004signal,
+  title={Signal analysis and processing for random binary phase coded pulse radar},
+  author={Guangmin, Sun and Guosui, Liu and Hong, Gu},
+  journal={J. Syst. Eng. Electron.},
+  volume={15},
+  number={4},
+  month=Dec,
+  year={2004},
+  pages={520--524},
+}
+
+@article{fuhrmann2008transmit,
+  title={Transmit beamforming for {MIMO} radar systems using signal cross-correlation},
+  author={Fuhrmann, Daniel R and San Antonio, Geoffrey},
+  journal={IEEE Trans. Aerosp. Electron. Syst.},
+  volume={44},
+  number={1},
+  month=May,
+  year={2008},
+  pages={171--186},
+}
+
+@BOOK{CT06,
+author= {T. M. Cover and J. A. Thomas},
+title = {Elements of Information Theory (second edition)},
+address = {Hoboken, NJ, USA},
+  year={2006},
+publisher = {John Wileys \& Sons},
+}
+
+
+@article{tuan2019non,
+  title={Non-Orthogonal Multiple Access with Improper {G}aussian Signaling},
+  author={Tuan, Hoang Duong and Nasir, Ali Arshad and Nguyen, Ha H and Duong, Trung Q and Poor, H Vincent},
+  journal={” IEEE J. Sel. Topics Signal Process.},
+  volume={13},
+  number={3},
+  month = Feb,
+  year={2019},
+ pages={496-507}
+}
+
+@Article{yu2020improper,
+  author  = {Yu, Hongwen and Tuan, Hoang Duong and Duong, Trung Q and Fang, Yong and Hanzo, Lajos},
+  journal = {IEEE Trans. Commun.},
+  title   = {Improper {G}aussian Signaling for Integrated Data and Energy Networking},
+  year    = {2020},
+  month   = Mar,
+  number  = {6},
+  pages   = {3922--3934},
+  volume  = {68},
+}
+
+@article{yu2020mimo,
+  title={{MIMO} Radar Waveform Design in the Presence of Multiple Targets and Practical Constraints},
+  author={Yu, Xianxiang and Alhujaili, Khaled and Cui, Guolong and Monga, Vishal},
+  journal={IEEE Trans. Signal Process.},
+  volume={68},
+  month=Mar,
+  year={2020},
+  pages={1974--1989},
+}
+
+@article{liu2017robust,
+  title={Robust {MIMO} beamforming for cellular and radar coexistence},
+  author={Liu, Fan and Masouros, Christos and Li, Ang and Ratnarajah, Tharmalingam},
+  journal={IEEE Wirel. Commun. Lett.},
+  volume={6},
+  number={3},
+  month=Apr,
+  year={2017},
+  pages={374--377},
+}
+
+
+@article{singh2018transceiver,
+  title={Transceiver design and power allocation for full-duplex {MIMO} communication systems with spectrum sharing radar},
+  author={Singh, Keshav and Biswas, Sudip and Ratnarajah, Tharmalingam and Khan, Faheem A},
+  journal={IEEE Trans. Cogn. Commun. Netw.},
+  volume={4},
+  number={3},
+  month=Apr,
+  year={2018},
+  pages={556--566},
+}
+
+@article{stoica2007probing,
+  title={On probing signal design for {MIMO} radar},
+  author={Stoica, Petre and Li, Jian and Xie, Yao},
+  journal={IEEE Trans. Signal Process.},
+  volume={55},
+  number={8},
+  month=Jul,
+  year={2007},
+  pages={4151--4161},
+}
+
+@article{ahmed2014mimo,
+  title={{MIMO} radar transmit beampattern design without synthesising the covariance matrix},
+  author={Ahmed, Sajid and Alouini, Mohamed-Slim},
+  journal={IEEE Trans. Signal Process.},
+  volume={62},
+  number={9},
+  month=Mar,
+  year={2014},
+  pages={2278--2289},
+}
+
+@article{tang2010mimo,
+  title={{MIMO} radar waveform design in colored noise based on information theory},
+  author={Tang, Bo and Tang, Jun and Peng, Yingning},
+  journal={IEEE Trans. Signal Process.},
+  volume={58},
+  number={9},
+  month=May,
+  year={2010},
+  pages={4684--4697},
+}
+
+
+@article{liu2020joint,
+  title={Joint Transmit Beamforming for Multiuser {MIMO} Communications and {MIMO} Radar},
+  author={Liu, Xiang and Huang, Tianyao and Shlezinger, Nir and Liu, Yimin and Zhou, Jie and Eldar, Yonina C},
+  journal={IEEE Trans. Signal Process.},
+  volume={68},
+  month=Jun,
+  year={2020},
+  pages={3929--3944},
+}
+
+@article{rihan2018optimum,
+  title={Optimum co-design of spectrum sharing between {MIMO} radar and {MIMO} communication systems: {A}n interference alignment approach},
+  author={Rihan, Mohamed and Huang, Lei},
+  journal={IEEE Trans. Veh. Tech.},
+  volume={67},
+  number={12},
+  month=Oct,
+  year={2018},
+  pages={11667--11680},
+}
+
+@article{tang2015relative,
+  title={Relative entropy-based waveform design for {MIMO} radar detection in the presence of clutter and interference},
+  author={Tang, Bo and Naghsh, Mohammad Mahdi and Tang, Jun},
+  journal={IEEE Trans. Signal Process.},
+  volume={63},
+  number={14},
+  month = Apr,
+  year={2015},
+  pages={3783--3796},
+}
+
+@article{cui2013mimo,
+  title={{MIMO} radar waveform design with constant modulus and similarity constraints},
+  author={Cui, Guolong and Li, Hongbin and Rangaswamy, Muralidhar},
+  journal={IEEE Trans. Signal Process.},
+  volume={62},
+  number={2},
+  month=Oct,
+  year={2013},
+  pages={343--353},
+}
+
+
+
+@article{khawar2015target,
+  title={Target detection performance of spectrum sharing {MIMO} radars},
+  author={Khawar, Awais and Abdelhadi, Ahmed and Clancy, Charles},
+  journal={IEEE Sensors J.},
+  volume={15},
+  number={9},
+  month=Apr,
+  year={2015},
+  pages={4928--4940},
+}
+
+
+@article{bekkerman2006target,
+  title={Target detection and localization using {MIMO} radars and sonars},
+  author={Bekkerman, Ilya and Tabrikian, Joseph},
+  journal={IEEE Trans. Signal Process.},
+  volume={54},
+  number={10},
+  month=Sep,
+  year={2006},
+  pages={3873--3883},
+}
+
+@book{kay1993fundamentals,
+  title={Fundamentals of Statistical Signal Processing: {D}etection Theory},
+  author={Kay, Steven M},
+  address ={Upper Saddle River, NJ, USA: Prentice-Hal},
+  year={1998},
+  volume={2},
+}
+
+@Article{nasir2019uav,
+  author  = {Nasir, Ali A and Tuan, Hoang D and Duong, Trung Q and Poor, H Vincent},
+  journal = {IEEE Trans. Commun.},
+  title   = {{UAV}-enabled communication using {NOMA}},
+  year    = {2019},
+  month   = Mar,
+}
+
+@misc{plappert2016kerasrl,
+    author = {Matthias Plappert},
+    title = {keras-rl},
+    year = {2016},
+    publisher = {GitHub},
+    journal = {GitHub repository},
+    howpublished = {\url{https://github.com/keras-rl/keras-rl}},
+}
+
+@article{diamond2016cvxpy,
+  title={{CVXPY}: {A} {P}ython-embedded modeling language for convex optimization},
+  author={Diamond, Steven and Boyd, Stephen},
+  journal={The Journal of Machine Learning Research},
+  volume={17},
+  number={1},
+  month = Jan,
+  year={2016},
+  pages={2909--2913},
+}
+
+
+@article{liu2008social,
+  title={Social welfare maximization in transmission enhancement considering network congestion},
+  author={Liu, Hongrui and Shen, Yanfang and Zabinsky, Zelda B and Liu, Chen-Ching and Courts, Alan and Joo, Sung-Kwan},
+  journal={IEEE Trans. Power Syst.},
+  volume={23},
+  number={3},
+  month = Jun,
+  year={2008},
+  pages={1105--1114}
+}
+
+
+@inproceedings{john1996static,
+  title={Static Versus Dynamic Sampling for Data Mining.},
+  author={John, George H and Langley, Pat},
+  booktitle={KDD},
+  volume={96},
+  month=Aug,
+  year={1996},
+  pages={367--370},
+}
+
+
+@inproceedings{tran2019federated,
+  title={Federated Learning over Wireless Networks: Optimization Model Design and Analysis},
+  author={Tran, Nguyen H and Bao, Wei and Zomaya, Albert and Hong, Choong Seon},
+  booktitle={IEEE INFOCOM 2019-IEEE Conference on Computer Communications},
+  month=Apr,
+  year={2019},
+  pages={1387--1395},
+}
+
+
+@article{konevcny2016federated,
+  title={Federated optimization: {D}istributed machine learning for on-device intelligence},
+  author={Kone{\v{c}}n{\`y}, Jakub and McMahan, H Brendan and Ramage, Daniel and Richt{\'a}rik, Peter},
+  journal={arXiv preprint arXiv:1610.02527},
+  month=Oct,
+  year={2016}
+}
+
+@article{zhang2017energy,
+  title={Energy-latency tradeoff for energy-aware offloading in mobile edge computing networks},
+  author={Zhang, Jiao and Hu, Xiping and Ning, Zhaolong and Ngai, Edith C-H and Zhou, Li and Wei, Jibo and Cheng, Jun and Hu, Bin},
+  journal={IEEE Internet Things J.},
+  volume={5},
+  number={4},
+  month=Dec,
+  year={2017},
+  pages={2633--2645},
+}
+
+@article{burd1996processor,
+  title={Processor design for portable systems},
+  author={Burd, Thomas D and Brodersen, Robert W},
+  journal={J. VLSI Signal Process. Syst.},
+  volume={13},
+  number={2-3},
+  month=Aug,
+  year={1996},
+  pages={203--221},
+}
+
+
+@inproceedings{chen2018performance,
+  title={Performance optimization in mobile-edge computing via deep reinforcement learning},
+  author={Chen, Xianfu and Zhang, Honggang and Wu, Celimuge and Mao, Shiwen and Ji, Yusheng and Bennis, Mehdi},
+  booktitle={Proc. IEEE VTC-Fall},
+  month=Aug,
+  year={2018},
+  pages={1--6},
+}
+
+
+@inproceedings{gu2001modelling,
+  title={Modelling classification performance for large data sets},
+  author={Gu, Baohua and Hu, Feifang and Liu, Huan},
+  booktitle={International Conference on Web-Age Information Management},
+  month=Jul,
+  year={2001},
+  pages={317--328},
+}
+
+@Article{wu2015energy,
+  author  = {Wu, Qingqing and Tao, Meixia and Ng, Derrick Wing Kwan and Chen, Wen and Schober, Robert},
+  journal = {IEEE Trans. Wireless Commun.},
+  title   = {Energy-efficient resource allocation for wireless powered communication networks},
+  year    = {2015},
+  month   = Nov,
+  number  = {3},
+  pages   = {2312--2327},
+  volume  = {15},
+}
+
+@inproceedings{zhang2018energy,
+  title={Energy-Efficient Dynamic Task Offloading for Energy Harvesting Mobile Cloud Computing},
+  author={Zhang, Yongqiang and He, Jianbo and Guo, Songtao},
+  booktitle={2018 IEEE International Conference on Networking, Architecture and Storage (NAS)},
+  month=Oct,
+  year={2018},
+  pages={1--4},
+}
+
+
+
+
+
+
+
+
+
+@inproceedings{melis2018exploiting,
+  title={Exploiting unintended feature leakage in collaborative learning},
+  author={Melis, Luca and Song, Congzheng and De Cristofaro, Emiliano and Shmatikov, Vitaly},
+  booktitle={IEEE Symposium on Security and Privacy (S \& P)},
+  year={2019}
+}
+
+@inproceedings{konevcny2016federated,
+  title={Federated learning: Strategies for improving communication efficiency},
+  author={Kone{\v{c}}n{\`y}, Jakub and McMahan, H Brendan and Yu, Felix X and Richt{\'a}rik, Peter and Suresh, Ananda Theertha and Bacon, Dave},
+  booktitle={NIPS Workshop on Private Multi-Party Machine Learning},
+  year={2016}
+}
+
+
+@article{anh2018deep,
+  title={Deep Reinforcement Learning for Time Scheduling in {RF}-Powered Backscatter Cognitive Radio Networks},
+  author={Anh, Tran The and Luong, Nguyen Cong and Niyato, Dusit and Liang, Ying-Chang and Kim, Dong In},
+  journal={arXiv preprint arXiv:1810.04520},
+  year={2018}
+}
+
+@article{mnih2015human,
+  title={Human-level control through deep reinforcement learning},
+  author={Mnih, Volodymyr and Kavukcuoglu, Koray and Silver, David and Rusu, Andrei A and Veness, Joel and Bellemare, Marc G and Graves, Alex and Riedmiller, Martin and Fidjeland, Andreas K and Ostrovski, Georg and others},
+  journal={Nature},
+  volume={518},
+  number={7540},
+  month=Feb,
+  year={2015},
+  pages={529},
+}
+
+@article{wang2017new,
+  title={A new paradigm of cloud-based predictive maintenance for intelligent manufacturing},
+  author={Wang, Jinjiang and Zhang, Laibin and Duan, Lixiang and Gao, Robert X},
+  journal={Journal of Intelligent Manufacturing},
+  volume={28},
+  number={5},
+  month=Jun,
+  year={2017},
+  pages={1125--1137},
+}
+
+@inproceedings{mismar2018deep,
+  title={Deep {Q}-Learning for Self-Organizing Networks Fault Management and Radio Performance Improvement},
+  author={Mismar, Faris B and Evans, Brian L},
+  booktitle={Proc. Asilomar Conf. Signals, Systems, and Computers},
+  month = Oct,
+  year={2018},
+  pages={1457--1461}
+}
+
+@article{mcmahan2017federated,
+  title={Federated learning: {C}ollaborative machine learning without centralized training data},
+  author={McMahan, Brendan and Ramage, Daniel},
+  journal={Google Research Blog},
+  volume={3},
+  month=Apr,
+  year={2017}
+}
+
+@InProceedings{van2016deep,
+  author    = {Van Hasselt, Hado and Guez, Arthur and Silver, David},
+  booktitle = {AAAI},
+  title     = {Deep reinforcement learning with double {Q}-learning},
+  year      = {2016},
+  address   = {Phoenix, Arizona},
+  month     = Mar,
+  pages     = {1--7},
+}
+
+@inproceedings{spendla2017concept,
+  title={Concept of predictive maintenance of production systems in accordance with industry 4.0},
+  author={Spendla, Lukas and Kebisek, Michal and Tanuska, Pavol and Hrcka, Lukas},
+  booktitle={IEEE SAMI},
+  month = Jan,
+  year={2017},
+  pages={405--410}
+}
+
+@article{yan2017industrial,
+  title={Industrial big data in an industry 4.0 environment: {C}hallenges, schemes, and applications for predictive maintenance},
+  author={Yan, Jihong and Meng, Yue and Lu, Lei and Li, Lin},
+  journal={IEEE Access},
+  volume={5},
+  month = Oct,
+  year={2017},
+  pages={23484--23491}
+}
+
+@book{mobley2002introduction,
+  title={An introduction to predictive maintenance},
+  author={Mobley, R Keith},
+  month = Oct,
+  year={2002},
+  publisher={Elsevier}
+}
+
+@article{zhao2019mobile,
+  title={Mobile Edge Computing, Blockchain and Reputation-based Crowdsourcing {I}o{T} Federated Learning: {A} Secure, Decentralized and Privacy-preserving System},
+  author={Zhao, Yang and Zhao, Jun and Jiang, Linshan and Tan, Rui and Niyato, Dusit},
+  journal={arXiv preprint arXiv:1906.10893},
+  month= Jun,
+  year={2019}
+}
+
+
+
+@article{anh2019efficient,
+  title={Efficient Training Management for Mobile Crowd-Machine Learning: {A} Deep Reinforcement Learning Approach},
+  author={Anh, Tran The and Luong, Nguyen Cong and Niyato, Dusit and Kim, Dong In and Wang, Li-Chun},
+  journal={IEEE Wirel. Commun. Lett.},
+  month=May,
+  year={2019}
+}
+
+
+@article{watkins1992q,
+  title={Q-learning},
+  author={Watkins, Christopher JCH and Dayan, Peter},
+  journal={Machine learning},
+  volume={8},
+  number={3-4},
+  month=May,
+  year={1992},
+  pages={279--292}
+}
+
+@inproceedings{chen2018performance,
+  title={Performance optimization in mobile-edge computing via deep reinforcement learning},
+  author={Chen, Xianfu and Zhang, Honggang and Wu, Celimuge and Mao, Shiwen and Ji, Yusheng and Bennis, Mehdi},
+  booktitle={Proc. IEEE VTC 2018 Fall},
+  month=Aug,
+  year={2018},
+  pages={1--6}
+}
+
+
+@article{ahmed2016optimal,
+  title={Optimal stochastic power control for energy harvesting systems with delay constraints},
+  author={Ahmed, Imtiaz and Phan, Khoa Tran and Le-Ngoc, Tho},
+  journal={IEEE J. Sel. Areas Commun.},
+  volume={34},
+  number={12},
+  month = Aug,
+  year={2016},
+  pages={3512--3527}
+}
+
+@Article{wang2017mobility,
+  author  = {Wang, Rui and Zhang, Jun and Song, SH and Letaief, Khaled B},
+  journal = {IEEE Trans. Wireless Commun.},
+  title   = {Mobility-aware caching in {D2D} networks},
+  year    = {2017},
+  month   = May,
+  number  = {8},
+  pages   = {5001--5015},
+  volume  = {16},
+}
+
+@article{tan2018mobility,
+  title={Mobility-aware edge caching and computing in vehicle networks: {A} deep reinforcement learning},
+  author={Tan, Le Thanh and Hu, Rose Qingyang},
+  journal={IEEE Trans. Veh. Tech.},
+  volume={67},
+  number={11},
+  month=Aug,
+  year={2018},
+  pages={10190--10203}
+}
+
+@article{chiang1998wireless,
+  title={Wireless network multicasting [{P}h. {D}. {T}hesis]},
+  author={Chiang, CC},
+  journal={Los Angeles: University of California},
+  year={1998}
+}
+
+@inproceedings{campos2004realistic,
+  title={Realistic individual mobility markovian models for mobile ad hoc networks},
+  author={Campos, Carlos Alberto V and Otero, Daniel C and de Moraes, Luis Felipe M},
+  booktitle={Proc. of IEEE WCNC 2004},
+  volume={4},
+  month=Mar,
+  year={2004},
+  pages={1980--1985}
+}
+
+
+
+
+
+
+
+
+@article{tandon2016harnessing,
+  title={Harnessing cloud and edge synergies: {T}oward an information theory of fog radio access networks},
+  author={Tandon, Ravi and Simeone, Osvaldo},
+  journal={IEEE Commun. Mag.},
+  volume={54},
+  number={8},
+  month = Aug,
+  year={2016},
+  pages={44--50}
+}
+
+
+@article{sun2018deep,
+  title={Deep Reinforcement Learning-Based Mode Selection and Resource Management for Green Fog Radio Access Networks},
+  author={Sun, Yaohua and Peng, Mugen and Mao, Shiwen},
+  journal={IEEE Internet Things J.},
+  volume={6},
+  number={2},
+  month=Sep,
+  year={2018},
+  pages={1960--1971}
+}
+
+@inproceedings{lu2019distributed,
+  title={Distributed Edge Caching via Reinforcement Learning in Fog Radio Access Networks},
+  author={Lu, Liuyang and Jiang, Yanxiang and Bennis, Mehdi and Ding, Zhiguo and Zheng, Fu-Chun and You, Xiaohu},
+  booktitle={Proc. IEEE VTC 2019 Spring},
+  month=Apr,
+  year={2019},
+  pages={1--6}
+}
+
+@Article{IEEE_IRS_HDTuan,
+  author    = {Yu, Hongwen and Tuan, Hoang Duong and Nasir, Ali Arshad and Duong, Trung Q and Poor, H Vincent},
+  journal   = {IEEE Journal on Selected Areas in Communications},
+  title     = {Joint design of reconfigurable intelligent surfaces and transmit beamforming under proper and improper gaussian signaling},
+  year      = {2020},
+  number    = {11},
+  pages     = {2589--2603},
+  volume    = {38},
+  publisher = {IEEE},
+}
+
+@Article{csiszar1984information,
+  author    = {Csisz{\'a}r, Imre},
+  journal   = {Statistics and decisions},
+  title     = {Information geonetry and alternating minimization procedures},
+  pages     = {205--237},
+  volume    = {1},
+  publisher = {Oldenburg Verlag},
+}
+
+@Article{lim2019adaptive,
+  author    = {Lim, Dong-Woo and Kang, Joonhyuk and Kim, Hyung-Myung},
+  journal   = {IEEE Wireless Communications Letters},
+  title     = {Adaptive power control for D2D communications in downlink SWIPT networks with partial CSI},
+  year      = {2019},
+  number    = {5},
+  pages     = {1333--1336},
+  volume    = {8},
+  publisher = {IEEE},
+}
+
+@Article{kammoun2020asymptotic,
+  author    = {Kammoun, Abla and Chaaban, Anas and Debbah, M{\'e}rouane and Alouini, Mohamed-Slim and others},
+  journal   = {IEEE Transactions on Wireless Communications},
+  title     = {Asymptotic max-min SINR analysis of reconfigurable intelligent surface assisted MISO systems},
+  year      = {2020},
+  number    = {12},
+  pages     = {7748--7764},
+  volume    = {19},
+  publisher = {IEEE},
+}
+
+@Article{wu2019towards,
+  author    = {Wu, Qingqing and Zhang, Rui},
+  journal   = {IEEE Communications Magazine},
+  title     = {Towards smart and reconfigurable environment: Intelligent reflecting surface aided wireless network},
+  year      = {2019},
+  month     = jan,
+  number    = {1},
+  pages     = {106--112},
+  volume    = {58},
+  publisher = {IEEE},
+}
+
+@Article{di2019smart,
+  author    = {Di Renzo, Marco and others},
+  journal   = {EURASIP Journal on Wireless Communications and Networking},
+  title     = {Smart radio environments empowered by reconfigurable AI meta-surfaces: An idea whose time has come},
+  year      = {2019},
+  month     = may,
+  number    = {1},
+  pages     = {1--20},
+  volume    = {2019},
+  publisher = {SpringerOpen},
+}
+
+@Article{hu2018integrated,
+  author    = {Hu, Jie and Yang, Kun and Wen, Guangjun and Hanzo, Lajos},
+  journal   = {IEEE Communications Surveys \& Tutorials},
+  title     = {Integrated data and energy communication network: A comprehensive survey},
+  year      = {2018},
+  number    = {4},
+  pages     = {3169--3219},
+  volume    = {20},
+  publisher = {IEEE},
+}
+
+@Article{asadi2014survey,
+  author    = {Asadi, Arash and Wang, Qing and Mancuso, Vincenzo},
+  journal   = {IEEE Communications Surveys \& Tutorials},
+  title     = {A survey on device-to-device communication in cellular networks},
+  year      = {2014},
+  number    = {4},
+  pages     = {1801--1819},
+  volume    = {16},
+  publisher = {IEEE},
+}
+
+@InProceedings{xu2012interference,
+  author       = {Xu, Chen and Song, Lingyang and Han, Zhu and Zhao, Qun and Wang, Xiaoli and Jiao, Bingli},
+  booktitle    = {2012 IEEE international conference on communications (ICC)},
+  title        = {Interference-aware resource allocation for device-to-device communications as an underlay using sequential second price auction},
+  year         = {2012},
+  organization = {IEEE},
+  pages        = {445--449},
+}
+
+@InProceedings{cai2020two,
+  author    = {Cai, Chang and Yang, Huiyuan and Yuan, Xiaojun and Liang, Yina-Chang},
+  booktitle = {IEEE Global Communications Conference},
+  title     = {Two-Timescale Optimization for Intelligent Reflecting Surface Aided D2D Underlay Communication},
+  year      = {2020},
+  pages     = {1--6},
+}
+
+@InProceedings{anh2019deep,
+  author       = {Anh, Tran The and Luong, Nguyen Cong and Niyato, Dusit and Liang, Ying-Chang and Kim, Dong In},
+  booktitle    = {2019 IEEE Wireless Communications and Networking Conference (WCNC)},
+  title        = {Deep reinforcement learning for time scheduling in RF-powered backscatter cognitive radio networks},
+  year         = {2019},
+  organization = {IEEE},
+  pages        = {1--7},
+}
+
+@Article{berger2009recent,
+  author    = {Berger, Stefan and Kuhn, Marc and Wittneben, Armin and Unger, Timo and Klein, Anja},
+  journal   = {IEEE Communications Magazine},
+  title     = {Recent advances in amplify-and-forward two-hop relaying},
+  year      = {2009},
+  number    = {7},
+  pages     = {50--56},
+  volume    = {47},
+  publisher = {IEEE},
+}
+
+@Article{mao2021intelligent,
+  author    = {Mao, Sun and Chu, Xiaoli and Wu, Qingqing and Liu, Lei and Feng, Jie},
+  journal   = {IEEE Wireless Communications Letters},
+  title     = {Intelligent Reflecting Surface Enhanced D2D Cooperative Computing},
+  year      = {2021},
+  publisher = {IEEE},
+}
+
+@Article{nguyen2021deep,
+  author  = {Nguyen, Khoi Khac and Masaracchia, Antonino and Yin, Cheng and Nguyen, Long D and Dobre, Octavia A and Duong, Trung Q},
+  journal = {arXiv preprint arXiv:2108.02892},
+  title   = {Deep Reinforcement Learning for Intelligent Reflecting Surface-assisted D2D Communications},
+  year    = {2021},
+}
+
+@Article{zhou2020intelligent,
+  author    = {Zhou, Gui and Pan, Cunhua and Ren, Hong and Wang, Kezhi and Nallanathan, Arumugam},
+  journal   = {IEEE Transactions on Signal Processing},
+  title     = {Intelligent reflecting surface aided multigroup multicast MISO communication systems},
+  year      = {2020},
+  pages     = {3236--3251},
+  volume    = {68},
+  publisher = {IEEE},
+}
+
+@Article{zargari2021max,
+  author    = {Zargari, Shayan and Khalili, Ata and Wu, Qingqing and Mili, Mohammad Robat and Ng, Derrick Wing Kwan},
+  journal   = {IEEE Trans. on Vehicular Technology},
+  title     = {Max-Min Fair Energy-Efficient Beamforming Design for Intelligent Reflecting Surface-Aided SWIPT Systems with Non-linear Energy Harvesting Model},
+  year      = {2021},
+  publisher = {IEEE},
+}
+
+@Article{cao2021sum,
+  author  = {Cao, Yashuai and Lv, Tiejun and Ni, Wei and Lin, Zhipeng},
+  journal = {IEEE Transactions on Communications},
+  title   = {Sum-Rate Maximization for Multi-Reconfigurable Intelligent Surface-Assisted Device-to-Device Communications},
+  year    = {to appear},
+}
+
+@InProceedings{tang2020joint,
+  author    = {Tang, Yizheng and Ma, Ganggang and Xie, Hailiang and Xu, Jie and Han, Xiao},
+  booktitle = {IEEE International Conference on Communications (ICC)},
+  title     = {Joint transmit and reflective beamforming design for IRS-assisted multiuser MISO SWIPT systems},
+  year      = {2020},
+  pages     = {1--6},
+}
+
+@Article{wu2019intelligent,
+  author    = {Wu, Qingqing and Zhang, Rui},
+  journal   = {IEEE Transactions on Wireless Communications},
+  title     = {Intelligent reflecting surface enhanced wireless network via joint active and passive beamforming},
+  year      = {2019},
+  number    = {11},
+  pages     = {5394--5409},
+  volume    = {18},
+  publisher = {IEEE},
+}
+
+@Article{gong2020toward,
+  author    = {Gong, Shimin and Lu, Xiao and Hoang, Dinh Thai and Niyato, Dusit and Shu, Lei and Kim, Dong In and Liang, Ying-Chang},
+  journal   = {IEEE Communications Surveys \& Tutorials},
+  title     = {Toward smart wireless communications via intelligent reflecting surfaces: A contemporary survey},
+  year      = {2020},
+  number    = {4},
+  pages     = {2283--2314},
+  volume    = {22},
+  publisher = {IEEE},
+}
+
+@Article{lee2015optimal,
+  author    = {Lee, Hoon and Lee, Sang-Rim and Lee, Kyoung-Jae and Kong, Han-Bae and Lee, Inkyu},
+  journal   = {IEEE Trans. on Wireless Communications},
+  title     = {Optimal beamforming designs for wireless information and power transfer in MISO interference channels},
+  year      = {2015},
+  number    = {9},
+  pages     = {4810--4821},
+  volume    = {14},
+  publisher = {IEEE},
+}
+
+@Comment{jabref-meta: databaseType:bibtex;}
