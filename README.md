@@ -86,7 +86,7 @@ $$
 #### 1. Encode
 To accomplish this objective,we add rows or columns containing random elements to matrices A and B, respectively.From there, we consider two distinct cases:
 
-##### a. Case 1: $n < m$
+##### a. Case 1: \( n < m \)
 
 $$
 \begin{align*} 
@@ -94,9 +94,9 @@ $$
 \end{align*}
 $$
 
-Matrix \(X^{*}\):
+Matrix $X^{*}$:
 
-\[
+$$
 X^{*} =
 \begin{bmatrix}
 X_{1,1} & \ldots & X_{1,n} \\
@@ -106,50 +106,51 @@ R_{1,1} & \ldots & R_{1,n} \\
 \vdots & \ddots & \vdots \\
 R_{\Delta_{P_C},1} & \ldots & R_{\Delta_{P_C},s}
 \end{bmatrix}
-\]
+$$
 
-Matrix \(Y^{*}\):
+Matrix $Y^{*}$:
 
-\[
+$$
 Y^* =
 \begin{bmatrix}
 Y_{1,1} & \ldots & Y_{1,p} & R_{n,1} & \ldots & R_{n,\Delta_{P_C}} \\
 \vdots & \ddots & \vdots & \vdots & \ddots & \vdots \\
 Y_{n,1} & \ldots & Y_{n,p} & Y_{1,1} & \ldots & R_{1,\Delta_{P_C}}
 \end{bmatrix}
-\]
+$$
 
-The encoding functions \(F^*\) and \(G^*\) are rewritten as follows:
+The encoding functions $F^{* }$ and $G^{* }$ are rewritten as follows:
 
-\[
-F^*(z) = \sum_{i=1}^{m} \sum_{j=1}^{n} X_{i,j}^* z^{n(i-1)+(j-1)} + \sum_{i=m+1}^{m^*} \sum_{j=1}^{n} X_{i,j}^* z^{n(i-1)+j-1}
-\]
+$$
+F^{* }(z) = \sum_{i=1}^{m} \sum_{j=1}^{n} X_{i,j}^{* }z^{n(i-1)+(j-1)} + \sum_{i=m+1}^{m^* } \sum_{j=1}^{n} X_{i,j}^{* }z^{n(i-1)+j-1}
+$$
 
-\[
-G^*(z) = \sum_{k=1}^{n} \sum_{l=1}^{p} Y_{k,l}^* z^{n-k+m^*n(l-1) } + \sum_{k=1}^{n} \sum_{l=p+1}^{p^*} Y_{k,l}^* z^{m^*np+n(l-p)-k}
-\]
+$$
+G^{* }(z) = \sum_{k=1}^{n} \sum_{l=1}^{p} Y_{k,l}^{* }z^{n-k+m^{* }n(l-1) } + \sum_{k=1}^{n} \sum_{l=p+1}^{p^{* }} Y_{k,l}^{* }z^{m^{* }np+n(l-p)-k}
+$$
+
 
 ##### b. Case 2: $n \geq m$
 
-\[
+$$
 \Delta_{P_C} = \left\lceil \frac{P_C}{\min\{m, p\}} \right\rceil
-\]
+$$
 
-Matrix \(X^* \in \mathbb{F}^{t\times n^*}\) will take the form \([X \ R]\) with \(n^* = n + \Delta_{P_C}\) obtained as
+Matrix $X^{* } \in \mathbb{F}^{t\times n^{* }}$ will take the form $[X \ R]$ with $n^{* } = n + \Delta_{P_C}$ obtained as
 
-\[
-X^* =
+$$
+X^{* } =
 \begin{bmatrix}
-X_{1,1} & \ldots & X_{1,n} & R_{1,1} & \ldots & R_{1,\Delta_{P_C}} \\
+X_{1,1} & \ldots & X_{1,n} & R_{1,1} & \ldots & R_{1,\Delta_{P_{C}}} \\
 \vdots & \ddots & \vdots & \vdots & \ddots & \vdots \\
-X_{m,1} & \ldots & X_{m,n} & X_{m,1} & \ldots & R_{m,\Delta_{P_C}}
+X_{m,1} & \ldots & X_{m,n} & X_{m,1} & \ldots & R_{m,\Delta_{P_{C}}}
 \end{bmatrix}
-\]
+$$
 
-The matrix \(Y^* = [R \ Y] \in \mathbb{F}^{n^*\times d}\) is represented as:
+The matrix $Y^{* } = [R \ Y] \in \mathbb{F}^{n^{* }\times d}$ is represented as:
 
-\[
-Y^* =
+$$
+Y^{* }=
 \begin{bmatrix}
 R_{\Delta_{P_C},1} & \ldots & R_{\Delta_{P_C},p} \\
 \vdots & \ddots & \vdots \\
@@ -158,32 +159,32 @@ Y_{1,1} & \ldots & Y_{1,p} \\
 \vdots & \ddots & \vdots \\
 Y_{n,1} & \ldots & Y_{n,p}
 \end{bmatrix}
-\]
+$$
 
 The encoding function in this case will be represented: 
 
-\[
+$$
 \begin{equation}
 \begin{aligned}
-F^*(z) &= \sum_{i=1}^{m} \sum_{j=1}^{n} X_{i,j}^* z^{(i-1) + m(j-1)} \\
-&\quad + \sum_{i=1}^{m} \sum_{j=n+1}^{n^*} X_{i,j}^* z^{(i-1) + m(j-1)}
+F^{* }(z) &= \sum_{i=1}^{m} \sum_{j=1}^{n} X_{i,j}^{* }z^{(i-1) + m(j-1)} \\
+&\quad + \sum_{i=1}^{m} \sum_{j=n+1}^{n^{* }} X_{i,j}^{* }z^{(i-1) + m(j-1)}
 \end{aligned}
 \end{equation}
-\]
+$$
 
-\[
+$$
 \begin{equation}
 \begin{aligned}
-G^*(z) &= \sum_{k=1+\Delta_{P_C}}^{p} \sum_{l=1}^{n^*} Y_{k,l}^* z^{(n^*-k)m + m(n^*)(l-1)} \\
-&\quad + \sum_{k=1}^{\Delta_{P_C}} \sum_{l=1}^{p} Y_{k,l}^* z^{m(n^*p-\Delta_{P_C}) + p(\Delta_{P_C}-k) + (l-1)}
+G^{* }(z) &= \sum_{k=1+\Delta_{P_C}}^{p} \sum_{l=1}^{n^{* }} Y_{k,l}^{* }z^{(n^{* }-k)m + m(n^{* })(l-1)} \\
+&\quad + \sum_{k=1}^{\Delta_{P_C}} \sum_{l=1}^{p} Y_{k,l}^{* }z^{m(n^{* }p-\Delta_{P_C}) + p(\Delta_{P_C}-k) + (l-1)}
 \end{aligned}
 \end{equation}
-\]
+$$
 
-####  2. Verification key
+#### 2. Verification key
 Let $n_0=\frac{N}{n},m_0=\frac{M}{m},p_0=\frac{P}{p}$.
 
-In case: $m_0 < p_0$ The master node will generate the key $k_i$ corresponding to $F^{* }(z_i)$, where the vectors $k^{T}_{i} \in \mathbb{F}^{m^{* }}$, as follows:
+In case: $m_0 < p_0$, master node will generate the key $k_i$ corresponding to $F^{* }(z_i)$, where the vectors $k^{T}_{i} \in \mathbb{F}^{m^{* }}$, as follows:
 
 $$
 \begin{align*}
@@ -191,7 +192,8 @@ R_i = k_i F^{* }(z_i)
 \end{align*}
 $$
 
-In case: $m_0 \geq p_0$, master node will generate vector $k_i \in \mathbb{F}^{p^{* }}$ corresponding to G∗(zi)as follow:
+In case: $m_0 \geq p_0$, master node will generate vector $k_i \in \mathbb{F}^{p^{* }}$ corresponding to $G∗(z_i)$ as follow:
+
 
 $$
 \begin{align*}
@@ -200,7 +202,7 @@ R_i= G^{* }(z_i)k_i
 $$
 
 #### 3. Task computing 
-After generating thekey, themaster code will send $F^{* }(z_i)$ and $G^{* }(z_i)$ to each i-thworker.The workers perform computations:
+After generating the key, the master code will send $F^{* }(z_i)$ and $G^{* }(z_i)$ to each $i$-th worker. The workers perform computations:
 
 $$
 \begin{align*}
@@ -210,52 +212,50 @@ $$
 
 #### 4. Key checking
 
-After receiving the result \(F_z(z_i)\) returned by the \(i\)-th worker, the master code will proceed to perform a check:
+After receiving the result $F_z(z_i)$ returned by the $i$-th worker, the master code will proceed to perform a check:
 
-\[
-R_iG^*(z_i) = k_iF^*(z_i)G^*(z_i)
-\]
+$$
+R_iG^{* } (z_i) = k_iF^{* }(z_i)G^{* }(z_i)
+$$
 
-or
+$$
+F^{* }(z_i)R_i = F^{* }(z_i)G^{* }(z_i)k_i
+$$
 
-\[
-F^*(z_i)R_i = F^*(z_i)G^*(z_i)k_i
-\]
-
-corresponding to cases \(m^* < p^*\) and \(m^* \geq p^*\).
-
+corresponding to cases $m^{* }< p^{* }$ and $m^{* }\geq p^{* }$.
 #### 5. Recover result
 
 Similar to the recovery step mentioned above, the master node will collect the results returned from the worker nodes to determine the coefficients through polynomial interpolation. It is important to note that these returned results must satisfy the key-checking step to be considered valid. 
-If the returned result is accurate, we add it to the $\mathbb{R_Z} $, and when $|R_z| \geq R_C$, the master node proceeds with decoding to obtain the final matrix.
+If the returned result is accurate, we add it to the $\mathbb{R_Z}$, and when $|R_z| \geq R_C$, the master node proceeds with decoding to obtain the final matrix.
+
 
 ### B. Recovery Threshold And Computation Load
 
-#### a. Case $ n < m $
-For a given security level \(P_c < P\), \(t\), \(s\), \(d\), \(n^*\), \(p^*\) are given as mentioned above, the SPC code has the recovery threshold \(P_R\) as follows:
+#### a. Case $n < m$
+For a given security level $P_{c} < P, t, s, d, n^{* }, p^{* }$ are given as mentioned above, the SPC code has the recovery threshold $P_R$ as follows:
 
-\[
+$$
 P_R =
 \begin{cases} 
-m^*n(p + 1) + n\Delta_{P_C} - 1, & \text{if } P_C \geq 1 \text{ and } \Delta_{P_C} = \frac{P_C}{n}, \\
-m^*n(p + 1) - n\Delta_{P_C} + 2P_C - 1, & \text{if } P_C \geq 1 \text{ and } \Delta_{P_C} > \frac{P_C}{n},
+m^{* }n(p + 1) + n\Delta_{P_C} - 1, & \text{if } P_C \geq 1 \text{ and } \Delta_{P_C} = \frac{P_C}{n}, \\
+m^{* }n(p + 1) - n\Delta_{P_C} + 2P_C - 1, & \text{if } P_C \geq 1 \text{ and } \Delta_{P_C} > \frac{P_C}{n},
 \end{cases}
-\]
+$$
 
-#### b. Case $ n \geq m $
 
-For a given security level \(P_c < P\), \(t\), \(s\), \(d\), \(n^*\), \(p^*\) are given as mentioned above, the SPC code has the recovery threshold as follows:
+#### b. Case $n \geq m$
 
-\[
-P_R = m(n^*p - \Delta_{P_C}) + mn + 2P_C - 1 
-\]
+For a given security level $P_{c} < P, t, s, d, n^{* }, p^{* }$ are given as mentioned above, the SPC code has the recovery threshold as follows:
+
+$$
+P_R = m(n^{* }p - \Delta_{P_C}) + mn + 2P_C - 1 
+$$
 
 And communication load in both cases: 
 
-\[
-C_L = P_R\frac{M^*P^*}{m^*p^*}
-\]
-
+$$
+C_L = P_R\frac{M^{* }P^{* }}{m^{* }p^{* }}
+$$
 
 ## Contact
 ### Paper
