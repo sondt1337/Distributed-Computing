@@ -86,7 +86,7 @@ $$
 #### 1. Encode
 To accomplish this objective,we add rows or columns containing random elements to matrices A and B, respectively.From there, we consider two distinct cases:
 
-##### a. Case 1: \( n < m \)
+##### a. Case 1: $n < m$
 
 $$
 \begin{align*} 
