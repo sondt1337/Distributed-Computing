@@ -1,8 +1,21 @@
 # Distributed Computing with Matrix Multiplication
-## Structure
+## Overview
+
+### Structure
 ![](/Distributed-Computing/image.png)
 
-## PolyDot Code without security
+- Master node: The largest computer responsible for partitioning the matrix, encoding, and distributing tasks to smaller worker nodes for computation. It also collects results from workers to verify integrity.
+- Worker: A subordinate computer responsible for computing submatrices and sending results back to the server (which the Master node receives).
+- Encode Function: Two encoding functions responsible for encoding the divided matrices using F, G functions.
+### Advantages:
+- Accelerates computation speed.
+- Addresses large-scale matrix multiplication problems.
+- Enhances scalability.
+### Disadvantages:
+- More complex compared to traditional methods.
+- Requires a high-performance computer network (high processing speed and substantial configuration requirements).
+
+## PolyDot Code without security (Algorithm)
 
 Master node partition the matrix 
 
@@ -81,7 +94,7 @@ $$
 C_L = P_D \frac{MP}{mp}
 \end{align*}
 $$
-## PolyDot Code with security
+## PolyDot Code with security (algorithm)
 ### A. Generalized PloyDot with Security
 #### 1. Encode
 To accomplish this objective,we add rows or columns containing random elements to matrices A and B, respectively.From there, we consider two distinct cases:
