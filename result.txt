@@ -1,17 +1,55 @@
- [24 68]]
-Generated Key: 12
+Generated Key: 2
 worker 1 (FxG_key):
-[[ 94860 228396]]
+[[48482 31454]]
 Correct Array
 worker 2 (FxG_key):
-[[1947120 2691804]]
+[[454676 504948]]
 Correct Array
 worker 3 (FxG_key):
-[[ 7127018556 11886710676]]
+[[1613104694 1959400646]]
 Correct Array
 worker 4 (FxG_key):
-[[-13321650576 -21612597396]]
+[[-2743874792  -363987308]]
 Correct Array
 worker 5 (FxG_key):
-[[25734081900  6657731964]]
+[[ 821993866 1688207342]]
+Correct Array
+worker 6 (FxG_key):
+[[2893000140 2514243764]]
+Correct Array
+worker 7 (FxG_key):
+[[5654318174672606 5900389492271318]]
+Correct Array
+worker 8 (FxG_key):
+[[47862995139894704 49289654662093716]]
+Correct Array
+worker 9 (FxG_key):
+[[305190106906273202 311110406402156798]]
+Correct Array
+worker 10 (FxG_key):
+[[1566563724986289220 1584152483886279156]]
+Correct Array
+worker 11 (FxG_key):
+[[6775190738822562694 6806636145134471910]]
+Correct Array
+worker 12 (FxG_key):
+[[7056871354480309000 7036981904446146196]]
+Correct Array
+worker 13 (FxG_key):
+[[-6639920876660581926 -7095332472623460850]]
+Correct Array
+worker 14 (FxG_key):
+[[2595752332192626556  201356035003302452]]
+Correct Array
+worker 15 (FxG_key):
+[[-5661202046551964626  3633894760341564150]]
+Incorrect Array
+worker 16 (FxG_key):
+[[-3840093199291656416  3597330502212458900]]
+Correct Array
+worker 17 (FxG_key):
+[[ 2567614790710693378 -7972497169905477858]]
+Correct Array
+worker 18 (FxG_key):
+[[344860337646623604 829031232618167156]]
 Correct Array
