@@ -9,5 +9,7 @@ F = np.array(json.loads(F_json))
 G_json = sys.argv[3]
 G = np.array(json.loads(G_json))
 
+print(F)
+print(G)
 
-print("Hello World! " + str(i))
+# print("Hello World! " + str(i))

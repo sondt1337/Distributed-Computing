@@ -98,6 +98,11 @@ def key_gen(m, M):
     key = [random.randint(0, 20) for _ in range(M // m)]
     return key
 
+def recovery_threshold(m, n, p, delta_pc, Pc):
+    if (delta_pc == Pc/n):
+        return (m + delta_pc) * n * (p+1) + n * delta_pc - 1
+    else:
+        return (m + delta_pc) * n * (p + 1) - n * delta_pc + 2 * Pc - 1 
 
 if __name__ == "__main__":
     print("---------------------------------------------")
@@ -125,8 +130,9 @@ if __name__ == "__main__":
 
     key = key_gen(m, M)
     print("Generated Key:", key)
+    # print ("recovery_threshold: ", recovery_threshold(m, n, p, delta_pc, Pc))
 
-    for i in range(30):  # 30 workers
+    for i in range(5):  # 30 workers
         F = calc_F(sub_matrices1, additional_matrices1, i, m, n, delta_pc)
         G = calc_G(sub_matrices2, additional_matrices2, i, m, n, p, delta_pc)
         F_json = json.dumps(F.tolist())  # Convert the NumPy array to a JSON string
