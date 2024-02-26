@@ -1,8 +1,0 @@
-version: '1.29.2'
-
-services:
-  chall:
-    build: ./
-    ports: 
-      - 1337:1337
-    restart: always

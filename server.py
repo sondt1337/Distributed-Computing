@@ -6,7 +6,14 @@ import math
 import random
 import json
 import sys 
+import time
 
+def write_total(correct_count, start_time):
+    with open("total.txt", "w") as file:
+        file.write(f"number of correct: {correct_count}\n")
+        file.write(f"number of incorrect: {incorrect_count}\n")
+        file.write(f"elapsed time: {time.time() - start_time} seconds\n")
+        
 def worker(i, F_json, G_json):
     subprocess.run(["python", "worker.py", str(i), F_json, G_json])
 
@@ -14,7 +21,20 @@ def worker(i, F_json, G_json):
 def write_to_file(file, content):
     with open(file, 'a') as f:
         f.write(content + '\n')
-
+        
+def get_number_of_correct():
+    with open("total.txt", "r") as file:
+        lines = file.readlines()
+        for line in lines:
+            if "number of correct:" in line:
+                return int(line.split(":")[1].strip())
+            
+def get_number_of_incorrect():
+    with open("total.txt", "r") as file:
+        lines = file.readlines()
+        for line in lines:
+            if "number of incorrect:" in line:
+                return int(line.split(":")[1].strip())
 
 def create_matrix(rows, cols):
     matrix = np.random.randint(100, size=(rows, cols))
@@ -105,7 +125,7 @@ def recovery_threshold(m, n, p, delta_pc, Pc):
 
 if __name__ == "__main__":
     if len(sys.argv) == 2 and sys.argv[1] == "create":
-
+        start_time = time.time() # start count time
         # M = 2, N = 4, P = 6, m = 2, n = 1, p = 3, Pc = 2
         M, N, P, m, n, p, Pc = map(int, input("Enter M, N, P, m, n, p, Pc: ").split())
         delta_pc = math.ceil(Pc / n)
@@ -128,7 +148,7 @@ if __name__ == "__main__":
             f.write("Generated Key: " + json.dumps(key_json) + '\n')
             # f.write("Program execution completed.\n")
 
-        for i in range(5):  # 5 workers
+        for i in range(28):  # 28 workers
             F = calc_F(sub_matrices1, additional_matrices1, i, m, n, delta_pc)
             G = calc_G(sub_matrices2, additional_matrices2, i, m, n, p, delta_pc)
             FxG = np.dot(F, G)
@@ -139,6 +159,14 @@ if __name__ == "__main__":
             r = multiprocessing.Process(target=worker, args=(i, F_json, G_json))
             r.start()
             r.join() 
+            correct_count = get_number_of_correct()
+            incorrect_count = get_number_of_incorrect()
+            if correct_count >= recovery_threshold(m, n, p, delta_pc, Pc):
+                print("Number of correct exceeds recovery threshold. Stopping all workers.")
+                write_total(correct_count, start_time)
+                break
+            
+            
     if len(sys.argv) == 4 and sys.argv[1] == "check":
         i = int(sys.argv[2])
         FmulG_json = sys.argv[3]
@@ -164,6 +192,36 @@ if __name__ == "__main__":
         if np.array_equal(FmulG_check_str, last_line):
             with open("result.txt", "a") as file:
                 file.write("Correct Array\n")
+            with open("total.txt", "r+") as total_file:
+                lines = total_file.readlines()
+                num_correct = 0
+                num_incorrect = 0
+                for line in lines:
+                    if "number of correct:" in line:
+                        num_correct = int(line.split(":")[1])
+                    elif "number of incorrect:" in line:
+                        num_incorrect = int(line.split(":")[1])
+
+                num_correct += 1
+                total_file.seek(0)
+                total_file.truncate()
+                total_file.write(f"number of correct: {num_correct}\n")
+                total_file.write(f"number of incorrect: {num_incorrect}\n")
         else:
             with open("result.txt", "a") as file:
                 file.write("Incorrect Array\n")
+            with open("total.txt", "r+") as total_file:
+                lines = total_file.readlines()
+                num_correct = 0
+                num_incorrect = 0
+                for line in lines:
+                    if "number of correct:" in line:
+                        num_correct = int(line.split(":")[1])
+                    elif "number of incorrect:" in line:
+                        num_incorrect = int(line.split(":")[1])
+
+                num_incorrect += 1
+                total_file.seek(0)
+                total_file.truncate()
+                total_file.write(f"number of correct: {num_correct}\n")
+                total_file.write(f"number of incorrect: {num_incorrect}\n")
