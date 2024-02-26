@@ -10,11 +10,11 @@ F = np.array(json.loads(F_json))
 G_json = sys.argv[3]
 G = np.array(json.loads(G_json))
 
-print(F)
-print(G)
-
 FmulG = np.dot(F, G)
 FmulG_json = json.dumps(FmulG.tolist())
 
-def server(FmulG_json):
-    subprocess.run(["python", "worker.py", FmulG_json])
+def server(FmulG_json, i):
+    subprocess.run(["python", "server.py", "check", str(i), FmulG_json])
+    
+if __name__ == "__main__":
+    server(FmulG_json, i)

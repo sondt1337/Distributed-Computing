@@ -93,8 +93,8 @@ def calc_G(sub_matrices, additional_matrices, z, m, n, p, delta_pc):
     return G
 
 
-def key_gen(m, M):
-    key = [random.randint(0, 20) for _ in range(M // m)]
+def key_gen():
+    key = random.randint(1, 20)
     return key
 
 def recovery_threshold(m, n, p, delta_pc, Pc):
@@ -105,10 +105,6 @@ def recovery_threshold(m, n, p, delta_pc, Pc):
 
 if __name__ == "__main__":
     if len(sys.argv) == 2 and sys.argv[1] == "create":
-        # with open("result.txt", "w") as f:
-            # f.write("---------------------------------------------\n")
-            # f.write("Welcome to the distributed-computing Program!\n")
-            # f.write("---------------------------------------------\n")
 
         # M = 2, N = 4, P = 6, m = 2, n = 1, p = 3, Pc = 2
         M, N, P, m, n, p, Pc = map(int, input("Enter M, N, P, m, n, p, Pc: ").split())
@@ -121,25 +117,53 @@ if __name__ == "__main__":
         sub_matrices2 = print_sub_matrices_2(matrix2, N // n, P // p)
         additional_matrices2 = create_additional_matrices_2(N // n, P // p, n, delta_pc)
 
-        key = key_gen(m, M)
+        key = np.int64(key_gen())
+        key_json = int(key)
 
         with open("result.txt", "w") as f:
             # f.write("Matrix 1:\n")
             # np.savetxt(f, matrix1, fmt="%d")
             # f.write("\nMatrix 2:\n")
             # np.savetxt(f, matrix2, fmt="%d")
-            f.write("Generated Key: " + json.dumps(key) + '\n')
+            f.write("Generated Key: " + json.dumps(key_json) + '\n')
             # f.write("Program execution completed.\n")
 
-        for i in range(5):  # 30 workers
+        for i in range(5):  # 5 workers
             F = calc_F(sub_matrices1, additional_matrices1, i, m, n, delta_pc)
             G = calc_G(sub_matrices2, additional_matrices2, i, m, n, p, delta_pc)
-            F_times_key = F * key
-            write_to_file("result.txt", f"worker {i+1} (F * key):\n{F_times_key}")
-            write_to_file("result.txt", f"worker {i+1} (G):\n{G}")
-            F_json = json.dumps(F.tolist())  # Convert the NumPy array to a JSON string
+            FxG = np.dot(F, G)
+            FxG_key = np.dot(FxG, key)
+            write_to_file("result.txt", f"worker {i+1} (FxG_key):\n{FxG_key}")
+            F_json = json.dumps(F.tolist())
             G_json = json.dumps(G.tolist())
             r = multiprocessing.Process(target=worker, args=(i, F_json, G_json))
             r.start()
             r.join() 
+    if len(sys.argv) == 4 and sys.argv[1] == "check":
+        i = int(sys.argv[2])
+        FmulG_json = sys.argv[3]
+        FmulG = np.array(json.loads(FmulG_json))
         
+        with open("result.txt", "r") as file:
+            content = file.read()
+            start_index = content.find("Generated Key:")
+            if start_index != -1:
+                end_index = content.find("\nworker", start_index)
+                key_string = content[start_index + len("Generated Key:"):end_index].strip()
+                key = int(key_string)
+        key_int64 = np.int64(key)
+        
+        FmulG_check = np.dot(FmulG, key_int64)
+        FmulG_check_str = str(FmulG_check)
+        
+        with open('result.txt', 'r') as file:
+            lines = file.readlines()
+        last_line = lines[-1].strip()
+        
+        
+        if np.array_equal(FmulG_check_str, last_line):
+            with open("result.txt", "a") as file:
+                file.write("Correct Array\n")
+        else:
+            with open("result.txt", "a") as file:
+                file.write("Incorrect Array\n")
