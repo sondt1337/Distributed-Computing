@@ -166,7 +166,7 @@ if __name__ == "__main__":
             f.write("\nGenerated Key: " + json.dumps(key_json) + '\n')
 
         for i in range(28):  # 28 workers (changeable)
-            print("|", end="\r")
+            print(" ", end="\r")
             F = calc_F(sub_matrices1, additional_matrices1, i, m, n, delta_pc)
             G = calc_G(sub_matrices2, additional_matrices2, i, m, n, p, delta_pc)
             FxG = np.dot(F, G)
