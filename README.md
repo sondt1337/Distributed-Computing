@@ -269,11 +269,43 @@ And communication load in both cases:
 $$
 C_L = P_R\frac{M^{* }P^{* }}{m^{* }p^{* }}
 $$
+## Run Project
+### Install lib & config 
+```
+pip install -r requirements.txt
+```
+### Run server
+```
+python server.py
+```
 
+## Build Project with Docker (Server)
+### Bash
+```
+cd Distributed-Computing
+docker compose up
+```
+### Netcat from Windows (cmd)
+You should use ncat in Windows: [Nmap tool](https://nmap.org/download.html)
+![](netcat/image.png)
+```
+ncat localhost 9999 
+```
+![](netcat/ncat.png)
+### Netcat from Linux (terminal)
+```
+nc localhost 9999
+```
+![](netcat/nc.png)
+
+(**9999** is default port in this project, you can change port with [Dockerfile](Dockerfile) and [docker-compose.yml](docker-compose.yml))
 ## Contact
 ### Paper
-If you have any question about this research, please check our research paper for more information: [A_Secure_PolyDot_Matrix_Multiplication_Approach_For_Distributed_Computing.pdf](/Paper-Research/A_Secure_PolyDot_Matrix_Multiplication_Approach_For_Distributed_Computing.pdf)
+Please check our research paper for more information: [A Secure PolyDot Matrix Multiplication Approach For Distributed Computing](/Paper-Research/A_Secure_PolyDot_Matrix_Multiplication_Approach_For_Distributed_Computing.pdf)
 ### Authors
-Thai Son Dinh: sondinh99999@gmail.com
+1. Thai Son Dinh: sondinh99999@gmail.com
+2. Dang Anh Duc Pham: anhduc03nb@gmail.com
 
-Dang Anh Duc Pham: anhduc03nb@gmail.com
+Buy me a coffee ☕: https://www.buymeacoffee.com/spid3r
+
+> Thank you for visiting and using this project! If you have any questions or need further assistance, please contact the authors.
