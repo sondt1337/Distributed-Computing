@@ -15,16 +15,16 @@ def write_total(correct_count, start_time):
         file.write(f"number of incorrect: {incorrect_count}\n")
         file.write(f"elapsed time: {time.time() - start_time} seconds\n")
         
-# send  worker sequence number, F (json) & G (json)       
+# SEND worker sequence number, F (json) & G (json)       
 def worker(i, F_json, G_json):
     subprocess.run(["python", "worker.py", str(i), F_json, G_json])
 
-# write file function
+# WRITE file function
 def write_to_file(file, content):
     with open(file, 'a') as f:
         f.write(content + '\n')
         
-# count number of worker (correct) --> total.txt            
+# COUNT number of worker (correct) --> total.txt            
 def get_number_of_correct():
     with open("total.txt", "r") as file:
         lines = file.readlines()
@@ -32,7 +32,7 @@ def get_number_of_correct():
             if "number of correct:" in line:
                 return int(line.split(":")[1].strip())
             
-# count number of worker (incorrect) --> total.txt      
+# COUNT number of worker (incorrect) --> total.txt      
 def get_number_of_incorrect():
     with open("total.txt", "r") as file:
         lines = file.readlines()
@@ -40,7 +40,7 @@ def get_number_of_incorrect():
             if "number of incorrect:" in line:
                 return int(line.split(":")[1].strip())
 
-# create random matrix (X, Y)
+# CREATE random matrix (X, Y)
 def create_matrix(rows, cols):
     matrix = np.random.randint(100, size=(rows, cols))
     return matrix
@@ -130,22 +130,27 @@ def recovery_threshold(m, n, p, delta_pc, Pc):
         return (m + delta_pc) * n * (p + 1) - n * delta_pc + 2 * Pc - 1 
 
 if __name__ == "__main__":
+    # CREATE process (server when start)
     if len(sys.argv) == 1:
         start_time = time.time() # start count time
         # M = 2, N = 4, P = 6, m = 2, n = 1, p = 3, Pc = 2
         M, N, P, m, n, p, Pc = map(int, input("Enter M, N, P, m, n, p, Pc: ").split())
-        delta_pc = math.ceil(Pc / n)
+        delta_pc = math.ceil(Pc / n) # COMPUTE delta_pc
+        
+        # GEN 2 MATRIX
         matrix1 = create_matrix(M, N)
         matrix2 = create_matrix(N, P)
 
+        # DIVIDE matrix & GEN additional matrix
         sub_matrices1 = print_sub_matrices_1(matrix1, M // m, N // n)
         additional_matrices1 = create_additional_matrices_1(M // m, N // n, n, delta_pc)
         sub_matrices2 = print_sub_matrices_2(matrix2, N // n, P // p)
         additional_matrices2 = create_additional_matrices_2(N // n, P // p, n, delta_pc)
 
+        # CONVERT key -> numpy type
         key = np.int64(key_gen())
         key_json = int(key)
-
+        
         with open("result.txt", "w") as f:
             # f.write("Matrix 1:\n")
             # np.savetxt(f, matrix1, fmt="%d")
@@ -154,7 +159,7 @@ if __name__ == "__main__":
             f.write("Generated Key: " + json.dumps(key_json) + '\n')
             # f.write("Program execution completed.\n")
 
-        for i in range(28):  # 28 workers
+        for i in range(28):  # 28 workers (changeable)
             F = calc_F(sub_matrices1, additional_matrices1, i, m, n, delta_pc)
             G = calc_G(sub_matrices2, additional_matrices2, i, m, n, p, delta_pc)
             FxG = np.dot(F, G)
@@ -162,7 +167,7 @@ if __name__ == "__main__":
             write_to_file("result.txt", f"worker {i+1} (FxG_key):\n{FxG_key}")
             F_json = json.dumps(F.tolist())
             G_json = json.dumps(G.tolist())
-            r = multiprocessing.Process(target=worker, args=(i, F_json, G_json))
+            r = multiprocessing.Process(target=worker, args=(i, F_json, G_json)) # parallel send from server to workers
             r.start()
             r.join() 
             correct_count = get_number_of_correct()
@@ -172,12 +177,14 @@ if __name__ == "__main__":
                 write_total(correct_count, start_time)
                 break
             
-            
+    # CHECK process (server when receive data from workers)  
     if len(sys.argv) == 4 and sys.argv[1] == "check":
+        # receive worker sequence number, F mul G (json)
         i = int(sys.argv[2])
         FmulG_json = sys.argv[3]
         FmulG = np.array(json.loads(FmulG_json))
         
+        # GET key gen from result.txt
         with open("result.txt", "r") as file:
             content = file.read()
             start_index = content.find("Generated Key:")
@@ -187,14 +194,16 @@ if __name__ == "__main__":
                 key = int(key_string)
         key_int64 = np.int64(key)
         
+        # CONVERT F mul G from numpy type -> string 
         FmulG_check = np.dot(FmulG, key_int64)
         FmulG_check_str = str(FmulG_check)
         
+        # GET F mul G 
         with open('result.txt', 'r') as file:
             lines = file.readlines()
         last_line = lines[-1].strip()
         
-        
+        # CHECK server value & workers value
         if np.array_equal(FmulG_check_str, last_line):
             with open("result.txt", "a") as file:
                 file.write("Correct Array\n")
