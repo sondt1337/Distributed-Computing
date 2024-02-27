@@ -1,3 +1,0 @@
-number of correct: 17
-number of incorrect: 2
-elapsed time: 13.382993221282959 seconds

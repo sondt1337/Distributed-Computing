@@ -133,6 +133,11 @@ if __name__ == "__main__":
     # CREATE process (server when start)
     if len(sys.argv) == 1:
         start_time = time.time() # start count time
+        # delete old data in total.txt & result.txt
+        with open("total.txt", "w"):
+            pass
+        with open("result.txt", "w"):
+            pass
         # M = 2, N = 4, P = 6, m = 2, n = 1, p = 3, Pc = 2
         M, N, P, m, n, p, Pc = map(int, input("Enter M, N, P, m, n, p, Pc: ").split())
         delta_pc = math.ceil(Pc / n) # COMPUTE delta_pc
@@ -175,6 +180,26 @@ if __name__ == "__main__":
             if correct_count >= recovery_threshold(m, n, p, delta_pc, Pc):
                 print("Number of correct exceeds recovery threshold. Stopping all workers.")
                 write_total(correct_count, start_time)
+                with open("total.txt", "r") as total_file:
+                        total_content = total_file.read()
+                print(total_content)
+                
+                # option: read result.txt
+                while True:
+                    with open("result.txt", "r") as result_file:
+                        result_content = result_file.read()
+                    
+                    choose = input("Do you want read result.txt? (yes/no): ")
+                    if (choose == "yes"):
+                        print("result.txt:")
+                        print(result_content)
+                        break
+                    elif (choose == "no"):
+                        break
+                    else: 
+                        print("please choose yes or no!")
+                with open("total.txt", "w"):
+                    pass     
                 break
             
     # CHECK process (server when receive data from workers)  
