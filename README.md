@@ -2,7 +2,7 @@
 ## Overview
 
 ### Structure
-![](/Distributed-Computing/image.png)
+![](/Image-Source/structure.png)
 
 - Master node: The largest computer responsible for partitioning the matrix, encoding, and distributing tasks to smaller worker nodes for computation. It also collects results from workers to verify integrity.
 - Worker: A subordinate computer responsible for computing submatrices and sending results back to the server (which the Master node receives).
@@ -287,16 +287,16 @@ docker compose up
 ```
 ### Netcat from Windows (cmd)
 You should use ncat in Windows: [Nmap tool](https://nmap.org/download.html)
-![](netcat/image.png)
+![](Image-Source/netcat.png)
 ```
 ncat localhost 9999 
 ```
-![](netcat/ncat.png)
+![](Image-Source/ncat.png)
 ### Netcat from Linux (terminal)
 ```
 nc localhost 9999
 ```
-![](netcat/nc.png)
+![](Image-Source/nc.png)
 
 (**9999** is default port in this project, you can change port with [Dockerfile](Dockerfile) and [docker-compose.yml](docker-compose.yml))
 ## Contact
