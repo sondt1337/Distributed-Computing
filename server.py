@@ -140,6 +140,8 @@ if __name__ == "__main__":
             pass
         # M = 2, N = 4, P = 6, m = 2, n = 1, p = 3, Pc = 2
         M, N, P, m, n, p, Pc = map(int, input("Enter M, N, P, m, n, p, Pc: ").split())
+        print("[+] Calculating and interacting with workers")
+        
         delta_pc = math.ceil(Pc / n) # COMPUTE delta_pc
         
         # GEN 2 MATRIX
@@ -157,14 +159,14 @@ if __name__ == "__main__":
         key_json = int(key)
         
         with open("result.txt", "w") as f:
-            # f.write("Matrix 1:\n")
-            # np.savetxt(f, matrix1, fmt="%d")
-            # f.write("\nMatrix 2:\n")
-            # np.savetxt(f, matrix2, fmt="%d")
-            f.write("Generated Key: " + json.dumps(key_json) + '\n')
-            # f.write("Program execution completed.\n")
+            f.write("Matrix 1:\n")
+            np.savetxt(f, matrix1, fmt="%d")
+            f.write("\nMatrix 2:\n")
+            np.savetxt(f, matrix2, fmt="%d")
+            f.write("\nGenerated Key: " + json.dumps(key_json) + '\n')
 
         for i in range(28):  # 28 workers (changeable)
+            print("|", end="\r")
             F = calc_F(sub_matrices1, additional_matrices1, i, m, n, delta_pc)
             G = calc_G(sub_matrices2, additional_matrices2, i, m, n, p, delta_pc)
             FxG = np.dot(F, G)
@@ -178,7 +180,7 @@ if __name__ == "__main__":
             correct_count = get_number_of_correct()
             incorrect_count = get_number_of_incorrect()
             if correct_count >= recovery_threshold(m, n, p, delta_pc, Pc):
-                print("Number of correct exceeds recovery threshold. Stopping all workers.")
+                print("[+] Number of correct exceeds recovery threshold. Stopping all workers.")
                 write_total(correct_count, start_time)
                 with open("total.txt", "r") as total_file:
                         total_content = total_file.read()
