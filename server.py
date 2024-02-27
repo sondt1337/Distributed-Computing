@@ -124,7 +124,7 @@ def recovery_threshold(m, n, p, delta_pc, Pc):
         return (m + delta_pc) * n * (p + 1) - n * delta_pc + 2 * Pc - 1 
 
 if __name__ == "__main__":
-    if len(sys.argv) == 2 and sys.argv[1] == "create":
+    if len(sys.argv) == 1:
         start_time = time.time() # start count time
         # M = 2, N = 4, P = 6, m = 2, n = 1, p = 3, Pc = 2
         M, N, P, m, n, p, Pc = map(int, input("Enter M, N, P, m, n, p, Pc: ").split())
