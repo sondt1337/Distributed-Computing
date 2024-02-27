@@ -8,20 +8,23 @@ import json
 import sys 
 import time
 
+# COMPUTE time --> total.txt    
 def write_total(correct_count, start_time):
     with open("total.txt", "w") as file:
         file.write(f"number of correct: {correct_count}\n")
         file.write(f"number of incorrect: {incorrect_count}\n")
         file.write(f"elapsed time: {time.time() - start_time} seconds\n")
         
+# send  worker sequence number, F (json) & G (json)       
 def worker(i, F_json, G_json):
     subprocess.run(["python", "worker.py", str(i), F_json, G_json])
 
-
+# write file function
 def write_to_file(file, content):
     with open(file, 'a') as f:
         f.write(content + '\n')
         
+# count number of worker (correct) --> total.txt            
 def get_number_of_correct():
     with open("total.txt", "r") as file:
         lines = file.readlines()
@@ -29,6 +32,7 @@ def get_number_of_correct():
             if "number of correct:" in line:
                 return int(line.split(":")[1].strip())
             
+# count number of worker (incorrect) --> total.txt      
 def get_number_of_incorrect():
     with open("total.txt", "r") as file:
         lines = file.readlines()
@@ -36,11 +40,12 @@ def get_number_of_incorrect():
             if "number of incorrect:" in line:
                 return int(line.split(":")[1].strip())
 
+# create random matrix (X, Y)
 def create_matrix(rows, cols):
     matrix = np.random.randint(100, size=(rows, cols))
     return matrix
 
-
+# DIVIDE sub matrix 1 
 def print_sub_matrices_1(matrix, submatrix_rows, submatrix_cols):
     num_rows, num_cols = matrix.shape
     sub_matrices = {}
@@ -51,7 +56,7 @@ def print_sub_matrices_1(matrix, submatrix_rows, submatrix_cols):
             sub_matrices[sub_matrix_name] = sub_matrix
     return sub_matrices
 
-
+# DIVIDE sub matrix 2
 def print_sub_matrices_2(matrix, submatrix_rows, submatrix_cols):
     num_rows, num_cols = matrix.shape
     sub_matrices = {}
@@ -62,7 +67,7 @@ def print_sub_matrices_2(matrix, submatrix_rows, submatrix_cols):
             sub_matrices[sub_matrix_name] = sub_matrix
     return sub_matrices
 
-
+# GEN additional matrix 1 (row)
 def create_additional_matrices_1(submatrix_rows, submatrix_cols, n, delta_pc):
     additional_matrices = {}
     for i in range(1, delta_pc + 1):
@@ -72,7 +77,7 @@ def create_additional_matrices_1(submatrix_rows, submatrix_cols, n, delta_pc):
             additional_matrices[sub_matrix_name] = sub_matrix
     return additional_matrices
 
-
+# GEN additional matrix 2 (col)
 def create_additional_matrices_2(submatrix_rows, submatrix_cols, n, delta_pc):
     additional_matrices = {}
     for i in range(n, 0, -1):
@@ -82,7 +87,7 @@ def create_additional_matrices_2(submatrix_rows, submatrix_cols, n, delta_pc):
             additional_matrices[sub_matrix_name] = sub_matrix
     return additional_matrices
 
-
+# COMPUTE F(z)
 def calc_F(sub_matrices, additional_matrices, z, m, n, delta_pc):
     F1 = 0
     F2 = 0
@@ -95,7 +100,7 @@ def calc_F(sub_matrices, additional_matrices, z, m, n, delta_pc):
     F = F1 + F2
     return F
 
-
+# COMPUTE G(z)
 def calc_G(sub_matrices, additional_matrices, z, m, n, p, delta_pc):
     G1 = 0
     G2 = 0
@@ -112,11 +117,12 @@ def calc_G(sub_matrices, additional_matrices, z, m, n, p, delta_pc):
     G = G1 + G2
     return G
 
-
+# GEN key (random 1 - 20)
 def key_gen():
     key = random.randint(1, 20)
     return key
 
+# COMPUTE recovery threshold Pr
 def recovery_threshold(m, n, p, delta_pc, Pc):
     if (delta_pc == Pc/n):
         return (m + delta_pc) * n * (p+1) + n * delta_pc - 1
