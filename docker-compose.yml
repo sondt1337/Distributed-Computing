@@ -1,0 +1,8 @@
+version: '1.29.2'
+
+services:
+  project:
+    build: ./
+    ports: 
+      - 9999:9999
+    restart: always
