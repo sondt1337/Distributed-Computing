@@ -125,7 +125,7 @@ def key_gen():
 # COMPUTE recovery threshold Pr
 def recovery_threshold(m, n, p, delta_pc, Pc):
     if (delta_pc == Pc/n):
-        return (m + delta_pc) * n * (p+1) + n * delta_pc - 1
+        return (m + delta_pc) * n * (p + 1) + n * delta_pc - 1
     else:
         return (m + delta_pc) * n * (p + 1) - n * delta_pc + 2 * Pc - 1 
 
@@ -139,6 +139,8 @@ if __name__ == "__main__":
 
             with open("result.txt", "w"):
                 pass
+            
+            # M, N, P, m, n, p, Pc = map(int, input("Enter M, N, P, m, n, p, Pc: ").split())
             M = 2
             N = 4
             P = 6
