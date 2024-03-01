@@ -189,7 +189,8 @@ if __name__ == "__main__":
                 if correct_count >= recovery_threshold(m, n, p, delta_pc, Pc):
                     print("[+] Number of correct exceeds recovery threshold. Stopping all workers.")
                     write_total(correct_count, start_time)
-                    with open("total_total.txt", "a") as total_total_file:
+                    # write time, num of correct & incorrect -> graph.txt
+                    with open("graph.txt", "a") as total_total_file:
                         total_total_file.write(f"Run {run + 1}: {time.time() - start_time}s, ")
                         total_total_file.write(f"incorrect:{incorrect_count}, ")
                         total_total_file.write(f"correct:{correct_count}\n")
