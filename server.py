@@ -132,77 +132,68 @@ def recovery_threshold(m, n, p, delta_pc, Pc):
 if __name__ == "__main__":
     # CREATE process (server when start)
     if len(sys.argv) == 1:
-        start_time = time.time() # start count time
-        # delete old data in total.txt & result.txt
-        with open("total.txt", "w"):
-            pass
-        with open("result.txt", "w"):
-            pass
-        # M = 2, N = 4, P = 6, m = 2, n = 1, p = 3, Pc = 2
-        M, N, P, m, n, p, Pc = map(int, input("Enter M, N, P, m, n, p, Pc: ").split())
-        print("[+] Calculating and interacting with workers")
-        
-        delta_pc = math.ceil(Pc / n) # COMPUTE delta_pc
-        
-        # GEN 2 MATRIX
-        matrix1 = create_matrix(M, N)
-        matrix2 = create_matrix(N, P)
+        total_runtimes = []  # List to store runtimes
 
-        # DIVIDE matrix & GEN additional matrix
-        sub_matrices1 = print_sub_matrices_1(matrix1, M // m, N // n)
-        additional_matrices1 = create_additional_matrices_1(M // m, N // n, n, delta_pc)
-        sub_matrices2 = print_sub_matrices_2(matrix2, N // n, P // p)
-        additional_matrices2 = create_additional_matrices_2(N // n, P // p, n, delta_pc)
+        for run in range(1500):  # Run the program 1500 times
+            start_time = time.time()  # start count time
 
-        # CONVERT key -> numpy type
-        key = np.int64(key_gen())
-        key_json = int(key)
-        
-        with open("result.txt", "w") as f:
-            f.write("Matrix 1:\n")
-            np.savetxt(f, matrix1, fmt="%d")
-            f.write("\nMatrix 2:\n")
-            np.savetxt(f, matrix2, fmt="%d")
-            f.write("\nGenerated Key: " + json.dumps(key_json) + '\n')
+            with open("result.txt", "w"):
+                pass
+            M = 2
+            N = 4
+            P = 6
+            m = 2
+            n = 1
+            p = 3
+            Pc = 2
 
-        for i in range(28):  # 28 workers (changeable)
-            print(" ", end="\r")
-            F = calc_F(sub_matrices1, additional_matrices1, i, m, n, delta_pc)
-            G = calc_G(sub_matrices2, additional_matrices2, i, m, n, p, delta_pc)
-            FxG = np.dot(F, G)
-            FxG_key = np.dot(FxG, key)
-            write_to_file("result.txt", f"worker {i+1} (FxG_key):\n{FxG_key}")
-            F_json = json.dumps(F.tolist())
-            G_json = json.dumps(G.tolist())
-            r = multiprocessing.Process(target=worker, args=(i, F_json, G_json)) # parallel send from server to workers
-            r.start()
-            r.join() 
-            correct_count = get_number_of_correct()
-            incorrect_count = get_number_of_incorrect()
-            if correct_count >= recovery_threshold(m, n, p, delta_pc, Pc):
-                print("[+] Number of correct exceeds recovery threshold. Stopping all workers.")
-                write_total(correct_count, start_time)
-                with open("total.txt", "r") as total_file:
-                        total_content = total_file.read()
-                print(total_content)
-                
-                # option: read result.txt
-                while True:
-                    with open("result.txt", "r") as result_file:
-                        result_content = result_file.read()
-                    
-                    choose = input("Do you want read result.txt? (yes/no): ")
-                    if (choose == "yes"):
-                        print("result.txt:")
-                        print(result_content)
-                        break
-                    elif (choose == "no"):
-                        break
-                    else: 
-                        print("please choose yes or no!")
-                with open("total.txt", "w"):
-                    pass     
-                break
+            delta_pc = math.ceil(Pc / n)  # COMPUTE delta_pc
+
+            # GEN 2 MATRIX
+            matrix1 = create_matrix(M, N)
+            matrix2 = create_matrix(N, P)
+
+            # DIVIDE matrix & GEN additional matrix
+            sub_matrices1 = print_sub_matrices_1(matrix1, M // m, N // n)
+            additional_matrices1 = create_additional_matrices_1(M // m, N // n, n, delta_pc)
+            sub_matrices2 = print_sub_matrices_2(matrix2, N // n, P // p)
+            additional_matrices2 = create_additional_matrices_2(N // n, P // p, n, delta_pc)
+
+            # CONVERT key -> numpy type
+            key = np.int64(key_gen())
+            key_json = int(key)
+
+            with open("result.txt", "w") as f:
+                f.write("Matrix 1:\n")
+                np.savetxt(f, matrix1, fmt="%d")
+                f.write("\nMatrix 2:\n")
+                np.savetxt(f, matrix2, fmt="%d")
+                f.write("\nGenerated Key: " + json.dumps(key_json) + '\n')
+
+            for i in range(-8, 19):  # 28 workers (changeable)
+                print(" ", end="\r")
+                F = calc_F(sub_matrices1, additional_matrices1, i, m, n, delta_pc)
+                G = calc_G(sub_matrices2, additional_matrices2, i, m, n, p, delta_pc)
+                FxG = np.dot(F, G)
+                FxG_key = np.dot(FxG, key)
+                write_to_file("result.txt", f"worker {i+1} (FxG_key):\n{FxG_key}")
+                F_json = json.dumps(F.tolist())
+                G_json = json.dumps(G.tolist())
+                r = multiprocessing.Process(target=worker, args=(i, F_json, G_json))
+                r.start()
+                r.join()
+                correct_count = get_number_of_correct()
+                incorrect_count = get_number_of_incorrect()
+                if correct_count >= recovery_threshold(m, n, p, delta_pc, Pc):
+                    print("[+] Number of correct exceeds recovery threshold. Stopping all workers.")
+                    write_total(correct_count, start_time)
+                    with open("total_total.txt", "a") as total_total_file:
+                        total_total_file.write(f"Run {run + 1}: {time.time() - start_time}s, ")
+                        total_total_file.write(f"incorrect:{incorrect_count}, ")
+                        total_total_file.write(f"correct:{correct_count}\n")
+                    with open("total.txt", "w"):
+                        pass
+                    break
             
     # CHECK process (server when receive data from workers)  
     if len(sys.argv) == 4 and sys.argv[1] == "check":
