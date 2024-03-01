@@ -122,3 +122,11 @@ Run 124: 12.560674905776978s, incorrect:4, correct:17
 Run 125: 12.164257526397705s, incorrect:4, correct:17
 Run 126: 12.104079008102417s, incorrect:4, correct:17
 Run 127: 13.705410480499268s, incorrect:6, correct:17
+Run 128: 12.000367403030396s, incorrect:3, correct:17
+Run 129: 12.726264476776123s, incorrect:4, correct:17
+Run 130: 12.597002029418945s, incorrect:4, correct:17
+Run 131: 11.984794616699219s, incorrect:3, correct:17
+Run 132: 14.913235425949097s, incorrect:7, correct:17
+Run 133: 14.253393173217773s, incorrect:7, correct:17
+Run 134: 13.18620491027832s, incorrect:5, correct:17
+Run 135: 13.636007070541382s, incorrect:6, correct:17
