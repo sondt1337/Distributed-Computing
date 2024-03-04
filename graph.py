@@ -12,8 +12,8 @@ for line in lines:
     parts = line.split(", ")
     run_number = int(parts[0].split(": ")[0].split(" ")[1])
     time = float(parts[0].split(": ")[1][:-1])
-    incorrect = int(parts[1].split(":")[1])
-    correct = int(parts[2].split(":")[1])
+    incorrect = int(parts[1].split(": ")[1])
+    correct = int(parts[2].split(": ")[1])
     data.append({"run": run_number, "elapsed_time": time, "incorrect": incorrect, "correct": correct})
 
 with open(output_file_path, 'w') as output_file:

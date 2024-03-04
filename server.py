@@ -193,8 +193,8 @@ if __name__ == "__main__":
                     # write time, num of correct & incorrect -> graph.txt
                     with open("graph.txt", "a") as total_total_file:
                         total_total_file.write(f"Run {run + 1}: {time.time() - start_time}s, ")
-                        total_total_file.write(f"incorrect:{incorrect_count}, ")
-                        total_total_file.write(f"correct:{correct_count}\n")
+                        total_total_file.write(f"incorrect: {incorrect_count}, ")
+                        total_total_file.write(f"correct: {correct_count}\n")
                     with open("total.txt", "w"):
                         pass
                     break
