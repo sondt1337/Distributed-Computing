@@ -9,7 +9,7 @@ i = int(sys.argv[1])
 F_json = sys.argv[2]
 F = np.array(json.loads(F_json))
 
-err = random.randint(1, 5) # random rate of workers
+err = random.randint(1, 6) # random rate of workers
 
 G_json = sys.argv[3]
 G = np.array(json.loads(G_json))

@@ -139,6 +139,8 @@ if __name__ == "__main__":
 
             with open("result.txt", "w"):
                 pass
+            with open("total.txt", "w"):
+                pass
             
             # M, N, P, m, n, p, Pc = map(int, input("Enter M, N, P, m, n, p, Pc: ").split())
             M = 2
@@ -172,8 +174,7 @@ if __name__ == "__main__":
                 np.savetxt(f, matrix2, fmt="%d")
                 f.write("\nGenerated Key: " + json.dumps(key_json) + '\n')
 
-            for i in range(-8, 19):  # 28 workers (changeable)
-                print(" ", end="\r")
+            for i in range(0, 40):  # 40 workers (changeable)
                 F = calc_F(sub_matrices1, additional_matrices1, i, m, n, delta_pc)
                 G = calc_G(sub_matrices2, additional_matrices2, i, m, n, p, delta_pc)
                 FxG = np.dot(F, G)
