@@ -9,9 +9,9 @@ WORKDIR /home/spid3r1337
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY ./server.py .
+COPY ./server_docker.py .
 COPY ./worker.py .
 COPY ./total.txt .
 COPY ./result.txt .
 
-CMD socat -T 30 -d -d TCP-LISTEN:9999,reuseaddr,fork EXEC:"python3 server.py"
+CMD socat -T 30 -d -d TCP-LISTEN:9999,reuseaddr,fork EXEC:"python3 server_docker.py"
