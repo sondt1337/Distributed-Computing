@@ -133,7 +133,8 @@ if __name__ == "__main__":
     # CREATE process (server when start)
     if len(sys.argv) == 1:
         total_runtimes = []  # List to store runtimes
-
+        with open("graph.txt", "w"):
+            pass
         for run in range(1500):  # Run the program 1500 times
             start_time = time.time()  # start count time
 
@@ -141,6 +142,7 @@ if __name__ == "__main__":
                 pass
             with open("total.txt", "w"):
                 pass
+            
             
             # M, N, P, m, n, p, Pc = map(int, input("Enter M, N, P, m, n, p, Pc: ").split())
             M = 2
