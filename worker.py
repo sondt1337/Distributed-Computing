@@ -23,7 +23,7 @@ FmulG_json = json.dumps(FmulG.tolist()) # convert value -> json
 
 # send F mul G to server (from each worker)
 def server(FmulG_json, i): 
-    subprocess.run(["python", "server.py", "check", str(i), FmulG_json])
+    subprocess.run(["python", "server_docker.py", "check", str(i), FmulG_json])
     
 if __name__ == "__main__":
     server(FmulG_json, i)
