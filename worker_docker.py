@@ -16,7 +16,7 @@ G = np.array(json.loads(G_json))
 M_json = sys.argv[4]
 m_json = sys.argv[5]
 
-#create error rate 
+# create error rate 
 if (err == 1):
     F+=F
 def write_to_file(file, content):
@@ -29,7 +29,7 @@ write_to_file("result.txt", f"{FmulG}")
 
 # send F mul G to server (from each worker)
 def server(FmulG_json, i): 
-    subprocess.run(["python", "server.py", "check", str(i), FmulG_json, M_json, m_json])
+    subprocess.run(["python", "server_docker.py", "check", str(i), FmulG_json, M_json, m_json])
     
 if __name__ == "__main__":
     server(FmulG_json, i)

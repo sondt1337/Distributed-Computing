@@ -16,8 +16,8 @@ def write_total(correct_count, start_time):
         file.write(f"elapsed time: {time.time() - start_time} seconds\n")
         
 # SEND worker sequence number, F (json) & G (json)       
-def worker(i, F_json, G_json):
-    subprocess.run(["python", "worker.py", str(i), F_json, G_json])
+def worker(i, F_json, G_json, M_json, m_json):
+    subprocess.run(["python", "worker.py", str(i), F_json, G_json, M_json, m_json])
 
 # WRITE file function
 def write_to_file(file, content):
@@ -174,7 +174,9 @@ if __name__ == "__main__":
             write_to_file("result.txt", f"worker {i+1} (FxG_key):\n{FxG_key}")
             F_json = json.dumps(F.tolist())
             G_json = json.dumps(G.tolist())
-            r = multiprocessing.Process(target=worker, args=(i, F_json, G_json)) # parallel send from server to workers
+            M_json = json.dumps(M)
+            m_json = json.dumps(m)
+            r = multiprocessing.Process(target=worker, args=(i, F_json, G_json, M_json, m_json)) # parallel send from server to workers
             r.start()
             r.join() 
             correct_count = get_number_of_correct()
@@ -206,11 +208,14 @@ if __name__ == "__main__":
                 break
             
     # CHECK process (server when receive data from workers)  
-    if len(sys.argv) == 4 and sys.argv[1] == "check":
+    if len(sys.argv) == 6 and sys.argv[1] == "check":
         # receive worker sequence number, F mul G (json)
         i = int(sys.argv[2])
         FmulG_json = sys.argv[3]
         FmulG = np.array(json.loads(FmulG_json))
+        M = json.loads(sys.argv[4])
+        m = json.loads(sys.argv[5])
+        x = int(M/m)
         
         # GET key gen from result.txt
         with open("result.txt", "r") as file:
@@ -229,10 +234,15 @@ if __name__ == "__main__":
         # GET F mul G 
         with open('result.txt', 'r') as file:
             lines = file.readlines()
-        last_line = lines[-1].strip()
+            last_two_lines = lines[-M:-x]
+        last_two_lines_str = ("".join(last_two_lines))
         
+        # with open("result.txt", "a") as file:
+        #     file.write(f"{FmulG_check}\n")
+        #     file.write(f"{last_two_lines_str[:-1]}")
+            
         # CHECK server value & workers value
-        if np.array_equal(FmulG_check_str, last_line):
+        if np.array_equal(FmulG_check_str, last_two_lines_str[:-1]):
             with open("result.txt", "a") as file:
                 file.write("Correct Array\n")
             with open("total.txt", "r+") as total_file:
